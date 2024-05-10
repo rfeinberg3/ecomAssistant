@@ -1,7 +1,4 @@
-[project_graph.pdf](https://github.com/rfeinberg3/ebay_Auto_Seller/files/15269796/project_graph.pdf)# ebay_Auto_Seller
-Generates descriptions for images of items users would like to sell/resell (on eBay).
-
-[Uploadin%PDF-1.4
+[project_graph.pdf](https://github.com/rfeinberg3/ebay_Auto_Seller/files/15269797/project_graph.pdf)[Uploading p%PDF-1.4
 %����
 1 0 obj
    << 
@@ -3040,4 +3037,4 @@ trailer
 startxref
 238681
 %%EOF
-g project_graph.pdf…]()
+roject_graph.pdf…]()
