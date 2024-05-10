@@ -12,7 +12,7 @@ Defining inputs for three microservices:
 There will be a few tweakable parameters in the API scraping service to allow for simple and robust data scraping. 
 2.	Raw Seller Data: ( type = tuple(strings) )
 This data will be returned to the scraping service based on format that the API calls return.
-**Outputs**: 
+\n**Outputs**: 
 1.	Refined Seller Data: ( type = (string, string) )
 List of string pairs describing products. Formatted as (description, item name) pairs.
  
