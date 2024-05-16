@@ -1,6 +1,9 @@
 # ebay_Auto_Seller
 Generates descriptions for images of items users would like to sell/resell (on eBay).
 
+## Component Graph
+![project_graph](https://github.com/rfeinberg3/ebay_Auto_Seller/assets/95943957/a0a61ac8-52f8-4a5b-b588-9d5fa1e9c21d)
+
 ## Component Plan
 
 Defining inputs for three microservices:
@@ -40,8 +43,6 @@ Requests data from the database to train on based on its prompt.
 2.	Description of User Image: ( type = string )
 Ideally the description of the users item in the most attractive style to a potential buyer.
 
-## Component Graph
-![project_graph](https://github.com/rfeinberg3/ebay_Auto_Seller/assets/95943957/a0a61ac8-52f8-4a5b-b588-9d5fa1e9c21d)
 
 
 
