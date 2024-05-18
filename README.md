@@ -7,7 +7,7 @@ eBay_Auto_Seller is a tool designed to generate descriptions for images of items
 ## Component Graph
 ![project_graph](https://github.com/rfeinberg3/ebay_Auto_Seller/assets/95943957/a0a61ac8-52f8-4a5b-b588-9d5fa1e9c21d)
 
-# Why Choose eBay
+## Why Choose eBay
 
 With numerous e-commerce websites available, why choose eBay? While it may not be everyone's favorite e-commerce platform, I believe eBay is the best choice for this application for several important reasons.
 
@@ -17,11 +17,11 @@ With numerous e-commerce websites available, why choose eBay? While it may not b
 
 3. **Vast and High-Quality Data:** eBay provides a vast quantity and quality of data, superior to other e-commerce sites like Etsy or Shopify. High-quality data is crucial for training a model to generate descriptions of everyday items people may wish to resell. Unlike Shopify and Etsy, which cater more to entrepreneurial startups, eBay's data is well-suited for this purpose.
 
-## Signing Up to be a Developer
+### Signing Up to be a Developer
 Signing up with eBay's developer program to access their APIs is simple and only takes a day for verification. Follow this link to sign up for API access (it's free!): [eBay Developer Program](https://developer.ebay.com/develop/get-started)
 
 
-## eBay’s RESTful APIs
+### eBay’s RESTful APIs
 
 Yet another reason for using eBay’s API service is its transition from traditional API services to REST-based APIs. This shift is so profound that it alone justifies using this service. 
 
@@ -38,7 +38,7 @@ There are many reasons why REST-based APIs are superior to traditional services:
 eBay’s RESTful APIs encapsulate these benefits, making them a powerful tool for developing robust, scalable, and high-performing applications.
 
 
-## The Right API: Buy APIs -> Browse API
+### The Right API: Buy APIs -> Browse API
 
 With so many APIs to choose from, which one should we use? The goal is to obtain as much information about as many items as possible with minimal effort. eBay's Browse API (from the home developer page go to APIs -> RESTful APIs -> Buy APIs -> Browse API) provides the one golden call we'll need to collect tons of high-quality data: the **search** call.
 
