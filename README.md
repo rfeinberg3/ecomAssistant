@@ -1,4 +1,4 @@
-# ebay_Auto_Seller
+# eBay_Auto_Seller
 
 ## Project Overview
 
