@@ -2,18 +2,19 @@
 
 This document provides guidance on setting up Docker containers and microservices for testing purposes.
 
-## References
+## Importance of Docker Containerization and Microservice Architecture
 
-### Dockerfile Tutorials
+### Docker Containerization
 
-To create Docker images with Dockerfile, follow this tutorial:
-- [How to Create Docker Images with Dockerfile](https://www.howtoforge.com/tutorial/how-to-create-docker-images-with-dockerfile/)
+Docker containerization is a lightweight virtualization method that allows developers to package applications and their dependencies into a single, portable container. These containers can run consistently across various computing environments. The importance of Docker containerization includes:
 
-For deploying microservices using Docker Compose, refer to this guide:
-- [Deploying Microservices with Docker](https://www.linode.com/docs/guides/deploying-microservices-with-docker/)
+- **Consistency and Isolation**: Containers ensure that an application runs the same way regardless of where it is deployed. Each container is isolated from others, which helps avoid conflicts between dependencies.
+- **Portability**: Docker containers can run on any platform that supports Docker, including local machines, on-premises servers, and cloud environments.
+- **Efficiency**: Containers share the host system's kernel and resources, which makes them more efficient and faster to start than traditional virtual machines.
+- **Scalability**: Docker containers can be easily scaled up or down, making it simpler to handle varying loads and improve resource utilization.
 
-For a step-by-step guide on creating Dockerfile, see:
-- [Step-by-Step Guide to Create Dockerfile](https://medium.com/@anshita.bhasin/a-step-by-step-guide-to-create-dockerfile-9e3744d38d11)
+### Microservice Architecture
+Microservice architecture is an architectural style that structures an application as a collection of loosely coupled services. Each service is self-contained and focuses on a specific business function. By breaking down applications into smaller, manageable services, microservices promote better organization and separation of concerns.
 
 ## Sample Containerized Program (w/ Dockerfile)
 
@@ -38,3 +39,17 @@ To run the microservice program:
 What you should see:
 
 ![image](https://github.com/rfeinberg3/ebay_Auto_Seller/assets/95943957/3b738fe0-4cb5-42f3-9bd3-cb191850d56f)
+
+
+## References
+
+### Dockerfile Tutorials
+
+To create Docker images with Dockerfile, follow this tutorial:
+- [How to Create Docker Images with Dockerfile](https://www.howtoforge.com/tutorial/how-to-create-docker-images-with-dockerfile/)
+
+For deploying microservices using Docker Compose, refer to this guide:
+- [Deploying Microservices with Docker](https://www.linode.com/docs/guides/deploying-microservices-with-docker/)
+
+For a step-by-step guide on creating Dockerfile, see:
+- [Step-by-Step Guide to Create Dockerfile](https://medium.com/@anshita.bhasin/a-step-by-step-guide-to-create-dockerfile-9e3744d38d11)
