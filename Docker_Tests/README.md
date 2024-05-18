@@ -24,8 +24,8 @@ To run the Dockerfile:
 1. Navigate to `Sample_Dockerfile`.
 2. Build the Docker image:
 ```docker build -t testing:v1 .
-3. Run the Docker container:
 
-docker run testing:v1
+3. Run the Docker container:
+```docker run testing:v1
 
 
