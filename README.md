@@ -46,6 +46,7 @@ Example Call Request Using search:
 https://api.sandbox.ebay.com/buy/browse/v1/item_summary/search?q=Apple&limit=3
 
 Respective Output Snippet:
+
 ![image](https://github.com/rfeinberg3/ebay_Auto_Seller/assets/95943957/7daed720-00f6-476c-8d82-bd7981f65a39)
 
 
