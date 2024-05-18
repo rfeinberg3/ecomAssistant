@@ -4,7 +4,7 @@ This document provides guidance on setting up Docker containers and microservice
 
 ## References
 
-### Dockerfile Tutorial
+### Dockerfile Tutorials
 
 To create Docker images with Dockerfile, follow this tutorial:
 - [How to Create Docker Images with Dockerfile](https://www.howtoforge.com/tutorial/how-to-create-docker-images-with-dockerfile/)
@@ -21,11 +21,10 @@ Navigate to the `Sample_Dockerfile` folder to see a simple Dockerfile example wh
 
 To run the Dockerfile:
 
-1. Navigate to `Sample_Dockerfile`.
+1. Navigate to the `Sample_Dockerfile` folder.
 2. Build the Docker image:
-```docker build -t testing:v1 .
-
+```docker build -t testing:v1 .```
 3. Run the Docker container:
-```docker run testing:v1
+```docker run testing:v1```
 
 
