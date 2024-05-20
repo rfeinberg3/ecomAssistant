@@ -1,1 +1,11 @@
+# Ignore Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Other common ignores
+env/
+*.env
+*.log
+*.sqlite3
 .DS_Store
