@@ -1,3 +1,5 @@
+account-credentials.json
+
 # Ignore Python bytecode
 __pycache__/
 *.pyc
