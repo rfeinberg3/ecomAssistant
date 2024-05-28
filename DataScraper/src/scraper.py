@@ -4,6 +4,7 @@ import requests
 from selenium import webdriver
 from selenium.webdriver.common.by import By # Locator object
 import time
+import json 
 from oauthlibrary.oauth_authentication import oauth_authentication
 
 
@@ -35,7 +36,7 @@ class scraper:
             raise Exception("Failed to find the description iframe in the HTML content")
         
     # Search for items
-    def search_and_scrape(self, keyword, limit='1', offset=0, deep_search=False):
+    def search_and_scrape(self, keyword, limit='1', offset='0', deep_search=False):
         """
         Be sure to include reference about the lines of code below.
         https://developer.ebay.com/api-docs/buy/browse/resources/item_summary/methods/search
@@ -48,9 +49,9 @@ class scraper:
         }
         params = {
             'q': keyword, # Item type to search for.
+            'fieldgroups' : 'EXTENDED,MATCHING_ITEMS', # Extended will work for production ebay calls to return short descriptions of items.
             'limit': limit,  # Number of items to return.
-            'offset': 0, # Skip this number of items before scanning items to return in the response load.
-            'fieldgroups' : 'EXTENDED,MATCHING_ITEMS' # Extended will work for production ebay calls to return short descriptions of items.
+            'offset': offset # Skip this number of items before scanning items to return in the response load.
         }
         if deep_search:
             params['filter'] = 'searchInDescription:true'
@@ -60,14 +61,18 @@ class scraper:
         response.raise_for_status()
         # Get item data
         content = response.json()
-        for item_data in content["itemSummaries"]:
-            # Add item description to item data dictionary
-            try:
-                item_description = self._extract_item_description(item_data["itemWebUrl"])
-                item_data["item_description"] = item_description
-                yield item_data # Makes dataset builder faster!
-            except Exception as e:
-                print(e)
+        if "itemSummaries" in content:
+            for item_data in content["itemSummaries"]:
+                  ##print(json.dumps(item_data, indent=4))
+                # Add item description to item data dictionary
+                try:
+                    item_description = self._extract_item_description(item_data["itemWebUrl"])
+                    item_data["item_description"] = item_description
+                    yield item_data # Makes dataset builder faster!
+                except Exception as e:
+                    print(e)
+        else:
+            return [""]
 
     @DeprecationWarning
     def extract_item_specifics(url): 
