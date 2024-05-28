@@ -60,14 +60,14 @@ class scraper:
         response.raise_for_status()
         # Get item data
         content = response.json()
-        item_data = content["itemSummaries"][0] 
-        # Add item description to item data dictionary
-        try:
-            item_description = self._extract_item_description(item_data["itemWebUrl"])
-            item_data["item_description"] = item_description
-            return item_data
-        except Exception as e:
-            print(e)
+        for item_data in content["itemSummaries"]:
+            # Add item description to item data dictionary
+            try:
+                item_description = self._extract_item_description(item_data["itemWebUrl"])
+                item_data["item_description"] = item_description
+                yield item_data # Makes dataset builder faster!
+            except Exception as e:
+                print(e)
 
     @DeprecationWarning
     def extract_item_specifics(url): 
