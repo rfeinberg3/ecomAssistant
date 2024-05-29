@@ -35,7 +35,7 @@ Since eBay formats their item descriptions as markups, effort is needed to scrap
 
 Despite testing simple request parsing, it became clear that the URL must be loaded in a browser to obtain the necessary script containing the item description text. For more details, see `DataScraper/src/scraper.py`.
 
-The same sample after adding the item description to the dictionary.
+The same sample after adding the item description to the dictionary:
 ```{
     "itemId": "v1|110554920324|0",
     "title": "Szanto Heritage Aviator Watches, Black Dial, Tan Strap, Gun Gray, One : SZ 2757",
