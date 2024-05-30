@@ -124,5 +124,5 @@ The same sample after adding the item description to the dictionary:
 ```
 
 ## Notes for Future Endevor
-- For production keysets API usage ratings must be obeyed. See `SEE URL` for more details.
+- For production keysets API usage ratings must be obeyed. Future development should go into caching and retry mechanisms to handle rate limit exceedances gracefully. See `SEE URL` for more details.
 - This is SLOW. Look into threading requests or generally implementing multiprocessing techniques. 
