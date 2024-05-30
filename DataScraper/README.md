@@ -20,6 +20,22 @@ from src.scraper import scraper
 
 `main.py` iterates through a list of newline seperated keywords searching for up to 200 results for each keyword.
 
+## Data
+
+Data was generated using eBay API search calls on a set of keywords with the limit set to 200 (`scraper.search_and_scrape(keyword, 200)`).
+
+Keyword text file examples can be seen in the `src/keywords` directory. To obtain the lists, CharGPT-4o was prompted for a keywords list. An example prompt:
+
+"""Give me a common and diverse set of items you would typically find on eBay such as these:
+Watch
+Technology
+Cars
+Games
+Shoes
+Clothes
+
+I am prompting a datascraper to search these items and collect there data for model training. Extend the list above with as many items as you deem necessary for a diverse model training dataset. Format your response as newline seperated item keywords like above."""
+
 ## eBay’s RESTful APIs
 
 Yet another reason for using eBay’s API service is its transition from traditional API services to REST-based APIs. This shift is so profound that it alone justifies using this service. 
