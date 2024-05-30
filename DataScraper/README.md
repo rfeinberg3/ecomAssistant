@@ -5,7 +5,7 @@
 - `selenium`
 - `requests`
 
-### Run
+### Code
 
 Open a script in the `src` directory and start with the imports below to get started. 
 
