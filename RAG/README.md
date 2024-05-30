@@ -29,7 +29,7 @@ Looking at ColBERT colab example:
 
  - This example seems to be adaptable to our data. Right now it seems very feasible and to just use the item descriptions as our collection, it's not clear right now how we would use the `Indexer` for multiples rows of data.
  - The data would have to be broken down to
- - 
+
 #### Generative Model Options
 - [GPT-2 for text generation](https://huggingface.co/openai-community/gpt2/tree/main)
 - BERT for fill-in-mask generation or question-answer generation? The masked part could be the item descriptions!
