@@ -1,4 +1,25 @@
 
+## Setup
+
+### Install External Libraries
+- `selenium`
+- `requests`
+
+### Run
+
+Open a script in the `src` directory and start with the imports below to get started. 
+
+```
+import os, sys
+sys.path.append('..')
+import json
+from src.scraper import scraper
+```
+
+`main.py` demonstrates how to use the scraper class, specifically its search_and_scrape() method provides. An important note about this method is that it returns a generator where each iteration is a single search result providing all of an items data. 
+
+`main.py` iterates through a list of newline seperated keywords searching for up to 200 results for each keyword.
+
 ## eBay’s RESTful APIs
 
 Yet another reason for using eBay’s API service is its transition from traditional API services to REST-based APIs. This shift is so profound that it alone justifies using this service. 
@@ -97,8 +118,4 @@ You may have noticed a very crucial detail of this output is missing, the items 
 }
 ```
 
-## Setup
 
-### Install External Libraries
-- `selenium`
-- `requests`
