@@ -22,7 +22,7 @@ from src.scraper import scraper
 
 ## Data
 
-Data was generated using eBay API search calls on a set of keywords with the limit set to 200 (`scraper.search_and_scrape(keyword, 200)`).
+`data` was generated using eBay API search calls on a set of keywords with the limit set to 200 (`scraper.search_and_scrape(keyword, 200)`).
 
 Keyword text file examples can be seen in the `src/keywords` directory. To obtain the lists, CharGPT-4o was prompted for a keywords list. An example prompt:
 
