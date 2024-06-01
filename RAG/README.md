@@ -27,15 +27,13 @@
   - Param count = 110M
   - Uses PyTorch and Safetensors
   - Model size is 438MB
- 
-Looking at ColBERT colab example:
- https://colab.research.google.com/github/stanford-futuredata/ColBERT/blob/main/docs/intro2new.ipynb#scrollTo=JRiOnzxtwI0j
+- [ColBERT intro colab](https://colab.research.google.com/github/stanford-futuredata/ColBERT/blob/main/docs/intro2new.ipynb#scrollTo=JRiOnzxtwI0j)
 
- - This example seems to be adaptable to our data. Right now it seems very feasible and to just use the item descriptions as our collection, it's not clear right now how we would use the `Indexer` for multiples rows of data.
 
-### Database Creation for ColBERT
-- Create a database that will work with the ColBERT retrieval model. This entails processing the data that we collected into tab seperated rows to make a TSV file (this is the simplest format that ColBERT works with). 
-- The database will only be allowed to contain one (index, document) tab seperated pair per row. The document will be one string of information, so we'll have to figure out how to best format our data to ensure the context that we'd like to see encoded is done so optimally.
+### Data processing for ColBERT
+- We must process our data into a database that will work with the ColBERT retrieval model. This entails processing the data that we collected into a column seperated file. Considering the eBay datascraper outputs a json file for each keyword prompted, we will have to combine all these into one file.
+- ColBERT's Indexer requires us to feed it data as a list of text strings called a collection. So we'll have to figure out exactly what data we want to use for each item, and the best way to format that all into one text string. Remember that these text strings will eventually be fed to some generative model after retrieval. 
+
 
 ### Look into Optimizing ColBERT for OpenQA Tasks
 - [Relevance-guided Supervision for OpenQA with ColBERT](https://arxiv.org/abs/2007.00814)
