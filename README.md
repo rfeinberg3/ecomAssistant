@@ -11,7 +11,7 @@ eBay_Auto_Seller is a tool designed to generate descriptions for items that user
 - **Data-pipeline**: Vector database and query handling deployment. 
 
 ## Micro-service Graph
-[Microservice Graph](Microservice_Graph/project_graph.pdf)
+![Microservice Graph](Microservice_Graph/project_graph.pdf)
 
 ## Why Microservices?
 
