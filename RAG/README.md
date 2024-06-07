@@ -7,20 +7,14 @@
 ### Basic Flow of our RAG Service
 
 1. **Knowledge Base Development**: 
-   - Before the model is ready for deployment, a knowledge base must be developed. This was done via the eBay datascraper I developed. See the `Datascraper` directory for details.
-   - The knowledge base will be embedded to create a Vector Database.
-   - The database being vectorized allows for efficient lookups later on.
-   - The database will essentially be machine-readable at this point.
+   - Before the model is ready for deployment, a knowledge base must be developed. This was done via the eBay datascraper I created. See the `Datascraper` directory for details.
+   - The knowledge base will be organized into a collection. In the case of using ColBERT as a retrieval model, this entails creating a list of strings (aka documents) that can be passed to the Indexer.
   
 2. **Querying the RAG Service**: 
-   - A user can now query the RAG service.
-   - The query is passed to an embedding model (tokenizer, image processor, or some other form of vectorization) which embeds the query.
-   - The embedded query can now be handled by a retrieval model, which will compare the embedded query to the vectorized database and retrieve similar data to the query.
-   - The retrieved data will then be decoded into text and sent along with the original query to a generative model (potentially fine-tuned) to generate a response for the user.
+   - Once the collection is indexed, the Searcher can now take a query, which it compares to the documents in the indexed collection to find the n best fit documents based on the query.
 
-## Plan for Implementation
 
-### Retrieval with ColBERTv2
+### ColBERTv2
 - [ColBERT on GitHub](https://github.com/stanford-futuredata/ColBERT?tab=readme-ov-file)
 - [ColBERTv2.0 on Hugging Face](https://huggingface.co/colbert-ir/colbertv2.0)
 - This model is fast, lightweight, and can produce state-of-the-art results.
