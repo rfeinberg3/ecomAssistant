@@ -38,6 +38,7 @@ We will use data collected with the eBay API datascraper and utilize ColBERT as 
   - Param count = 110M
   - Uses PyTorch and Safetensors
   - Model size is 438MB
+  - Trained on MS MARCO Passage Ranking
 - [ColBERT intro colab](https://colab.research.google.com/github/stanford-futuredata/ColBERT/blob/main/docs/intro2new.ipynb#scrollTo=JRiOnzxtwI0j)
 
 
