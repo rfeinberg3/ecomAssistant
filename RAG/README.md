@@ -1,18 +1,35 @@
-# Retrieval-Augmented Generation
+# Retrieval-Augmented Generation (RAG) Service
 
-## Overview
+
+## Abstract
+Retrieval-Augmented Generation (RAG) has gained significant traction recently, thanks to many open-source pretrained models like Google’s T5 and Facebook’s BART. Companies are adopting this technology to enhance response accuracy and data fluency.
+
+RAG models stand out from other query-answer generative models, such as GPTs, by utilizing a retriever or search model to query a database—whether proprietary or containing new information—before generating answers. This approach leads to more accurate and reliable responses, as opposed to non-RAG models, which risk generating “hallucinations” when answering questions beyond their training. Essentially, RAG addresses the issue of knowledge cut-off dates.
+
+Additionally, organizations are investing in RAG models to reduce the high costs associated with training large language models (LLMs) and the continual retraining required for maintaining proprietary knowledge accuracy. RAG mitigates these costs by connecting to a database, where simply adding new data ensures ongoing response accuracy.
+
+## Introduction
+
+We will use data collected with the eBay API datascraper and utilize ColBERT as a retrieval model to gather relevant documents at query time.
+
 
 ## Method
 
-### Basic Flow of our RAG Service
+1. **Developing the Knowledge Base**: 
+  - Data Collection: Develop a knowledge base using the eBay datascraper. (See the `Datascraper` directory for details.)
+  - Data Organization: Organize the knowledge base into a collection of documents (strings) for ColBERT’s Indexer.
+  - Data Indexing: Use ColBERT’s Indexer to process and index the collection, making it searchable. 
 
-1. **Knowledge Base Development**: 
-   - Before the model is ready for deployment, a knowledge base must be developed. This was done via the eBay datascraper I created. See the `Datascraper` directory for details.
-   - The knowledge base will be organized into a collection. In the case of using ColBERT as a retrieval model, this entails creating a list of strings (aka documents) that can be passed to the Indexer.
-  
-2. **Querying the RAG Service**: 
-   - Once the collection is indexed, the Searcher can now take a query, which it compares to the documents in the indexed collection to find the n best fit documents based on the query.
+2. **Executing the Retrieval Query**: 
+  - Query Processing: Once the collection is indexed, ColBERT’s Searcher can take a query and compare it to the indexed documents to find the k best matches.
+  - User Query Input: The user inputs a descriptive title for the item they wish to sell, which the Searcher uses to find relevant documents.
 
+3. **Aggregating Price Data**:
+  - Document Retrieval: ColBERT retrieves documents based on the text query (the item’s title), providing information about the k most similar items scraped from eBay.
+  - Price Calculation: Extract the price attribute from each of the k documents and calculate an aggregated price value to suggest to the user for their product.
+
+
+## References
 
 ### ColBERTv2
 - [ColBERT on GitHub](https://github.com/stanford-futuredata/ColBERT?tab=readme-ov-file)
@@ -24,16 +41,9 @@
 - [ColBERT intro colab](https://colab.research.google.com/github/stanford-futuredata/ColBERT/blob/main/docs/intro2new.ipynb#scrollTo=JRiOnzxtwI0j)
 
 
-### Data processing for ColBERT
-- We must process our data into a database that will work with the ColBERT retrieval model. This entails processing the data that we collected into a column seperated file. Considering the eBay datascraper outputs a json file for each keyword prompted, we will have to combine all these into one file.
-- ColBERT's Indexer requires us to feed it data as a list of text strings called a collection. So we'll have to figure out exactly what data we want to use for each item, and the best way to format that all into one text string. Remember that these text strings will eventually be fed to some generative model after retrieval. 
+## Future work
 
-
-### Look into Optimizing ColBERT for OpenQA Tasks
-- [Relevance-guided Supervision for OpenQA with ColBERT](https://arxiv.org/abs/2007.00814)
-
-
-### Look into Generative Model Options
+### Look into Generative Model Options for Generating item Descriptions
 - [GPT-2 for text generation](https://huggingface.co/openai-community/gpt2/tree/main)
 - BERT for fill-in-mask generation or question-answer generation? The masked part could be the item descriptions!
   - [BERT-base-uncased on Hugging Face](https://huggingface.co/google-bert/bert-base-uncased/tree/main)
@@ -42,12 +52,13 @@
 - Phi-3 mini for text generation
   - [Phi-3 mini on Hugging Face](https://huggingface.co/microsoft/Phi-3-mini-4k-instruct?text=Give+a+seller+description+for+the+following+item+‘Apple+Watch’)
 
+### Look into Optimizing ColBERT for OpenQA Tasks
+- [Relevance-guided Supervision for OpenQA with ColBERT](https://arxiv.org/abs/2007.00814)
+
+## Discussion
+
 **Other Models**
 - There are other open-source models for RAG architecture out there that could be used as well.
 - One such example is Facebook's RAG-Token Model, a neat tokenizer-retriever-model pipeline. However, this pipeline would require lots of reconstruction to set up for our use case and doesn't have much supporting documentation (any really) to aid in this endeavor.
 - Constructing a pipeline from scratch with the RAGatouille library seems to be a much more efficient process, provided the large amount of resources present in their framework.
 
-## Other Resources
-**The RAGatouille Library**
-- [RAGatouille on GitHub](https://github.com/bclavie/ragatouille)
-- This library is designed to work with ColBERT, provide modularity and ease-of-use, and is backed by research.

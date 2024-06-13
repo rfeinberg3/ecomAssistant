@@ -7,8 +7,7 @@ eBay_Auto_Seller is a tool designed to generate descriptions for items that user
 ### Key Aspects
 - **Microservice Architecture**: Using Docker-compose to orchestrate containerization.
 - **REST APIs**: Scalable and efficient API calls for knowledge base development.
-- **Retrieval-Augmented Generation (RAG)**: Fast and size efficient document retrieval to text generation.
-- **Data-pipeline**: Vector database and query handling deployment. 
+- **Retrieval-Augmented Generation (RAG)**: Fast and size efficient document retrieval.
 
 ## Micro-service Graph
 ![project_graph.pdf](https://github.com/user-attachments/files/15679582/project_graph.pdf)
