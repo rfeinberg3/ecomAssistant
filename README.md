@@ -1,4 +1,4 @@
-# eBay Item Analytics
+# eBay Auto Seller
 
 ## Project Overview
 
