@@ -1,4 +1,4 @@
-# eBay Item Analytics
+# eBay Auto Seller
 
 <div style="text-align: center;">
     <img src="./Images/logo.jpg" alt="logo" height=300/>
