@@ -38,11 +38,11 @@ def filter_data(data_list):
 
 if __name__ == '__main__':
     combined_data = combine_data(data_dir)
-    data = filter_data(combined_data)
+    filtered_data = filter_data(combined_data)
 
     # Write to pandas Data Frame
-    split_data = [line.split('\t') for line in data] # Split each line into a list of values
+    split_data = [line.split('\t') for line in filtered_data] # Split each line into a list of values
     df = pd.DataFrame(split_data, columns=['title', 'price', 'condition', 'description']) # Create a DataFrame
 
     # Save to CSV
-    df.to_csv('database.csv', index=False)
+    df.to_json('database.json', index=True, indent=4)
