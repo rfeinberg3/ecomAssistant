@@ -26,6 +26,44 @@ Another reason for using eBay’s API service is its transition from traditional
 - **Performance:** REST APIs leverage HTTP caching mechanisms, reducing server load and improving response times for better overall performance.
 
 
+## Setup
+
+### Install External Libraries
+- `selenium`
+- `requests`
+
+### Code
+
+Open a script in the `src` directory and start with the imports below to get started. 
+
+```
+import os, sys
+sys.path.append('..')
+import json
+from src.scraper import scraper
+```
+
+`main.py` demonstrates how to use the scraper class, specifically its search_and_scrape() method provides. An important note about this method is that it returns a generator where each iteration is a single search result providing all of an items data. 
+
+`main.py` iterates through a list of newline seperated keywords searching for up to 200 results for each keyword.
+
+
+## Data
+
+`outputs` was generated using eBay API search calls on a set of keywords with the limit set to 200 (`scraper.search_and_scrape(keyword, 200)`).
+
+Keyword text file examples can be seen in the `src/keywords` directory. To obtain the lists, CharGPT-4o was prompted for a keywords list. An example prompt:
+
+"""Give me a common and diverse set of items you would typically find on eBay such as these:
+Watch
+Technology
+Cars
+Games
+Shoes
+Clothes
+
+I am prompting a datascraper to search these items and collect there data for model training. Extend the list above with as many items as you deem necessary for a diverse model training dataset. Format your response as newline seperated item keywords like above."""
+
 ## Method 
 
 ### Sandbox Mode
@@ -73,44 +111,6 @@ The same sample after adding the item description to the dictionary (some lines 
     phone call, e-mail, fax and even livechat, so don't hesitate to contact us!\nSign up for our Newsletter\nSubscribe to our newsletter to stay up to date with the latest products from OpticsPlanet\nSIGN UP\nWhy Buy From Us?\nFree Shipping on Most Orders\nNo Sales Tax for Most Orders\nSafe & Secure Shopping\nCustomer Feedback\nWe Value Your Privacy\nCustomer Service\nReturns & Exchanges\nShipping Policy\nContact Us\nHours of Operation\n9am - 5:30pm CT Mon-Fri (Calls, Chats & Emails)\n\u00a9 Copyright 1999-2017 OpticsPlanet"
 }
 ```
-
-## Setup
-
-### Install External Libraries
-- `selenium`
-- `requests`
-
-### Code
-
-Open a script in the `src` directory and start with the imports below to get started. 
-
-```
-import os, sys
-sys.path.append('..')
-import json
-from src.scraper import scraper
-```
-
-`main.py` demonstrates how to use the scraper class, specifically its search_and_scrape() method provides. An important note about this method is that it returns a generator where each iteration is a single search result providing all of an items data. 
-
-`main.py` iterates through a list of newline seperated keywords searching for up to 200 results for each keyword.
-
-
-## Data
-
-`outputs` was generated using eBay API search calls on a set of keywords with the limit set to 200 (`scraper.search_and_scrape(keyword, 200)`).
-
-Keyword text file examples can be seen in the `src/keywords` directory. To obtain the lists, CharGPT-4o was prompted for a keywords list. An example prompt:
-
-"""Give me a common and diverse set of items you would typically find on eBay such as these:
-Watch
-Technology
-Cars
-Games
-Shoes
-Clothes
-
-I am prompting a datascraper to search these items and collect there data for model training. Extend the list above with as many items as you deem necessary for a diverse model training dataset. Format your response as newline seperated item keywords like above."""
 
 
 ## Future Work
