@@ -13,7 +13,7 @@ With numerous e-commerce websites available, why choose eBay? While it may not b
 
 3. **Vast and High-Quality Data:** eBay offers superior data quantity and quality compared to sites like Etsy or Shopify. This data is crucial for training a model to generate descriptions of everyday items for resale. Unlike Shopify and Etsy, which cater more to entrepreneurial startups, eBay's data is well-suited for this purpose.
 
-### eBay’s RESTful APIs
+#### eBay’s RESTful APIs
 
 Another reason for using eBay’s API service is its transition from traditional APIs to REST-based APIs. This shift justifies using this service due to several advantages:
 
@@ -75,16 +75,16 @@ Signing up with eBay's developer program to access their sandbox APIs is simple 
 ### The Right API: Buy APIs -> Browse API
 With so many APIs to choose from, which one should we use? The goal is to obtain as much information about as many items as possible with minimal effort. eBay's Browse API (from the home developer page go to APIs -> RESTful APIs -> Buy APIs -> Browse API) provides the one golden call we'll need to collect tons of high-quality data: the **search** call.
 
-Example Call Request Using search API call:
+Example Call Request Using search:
 https://api.sandbox.ebay.com/buy/browse/v1/item_summary/search?q=watch&limit=3
 
 Respective Output Example (some lines redacted):
 `{"itemId": "v1|110554920324|0", "title": "Szanto Heritage Aviator Watches, Black Dial, Tan Strap, Gun Gray, One : SZ 2757", ...REDACTED LINES..., "itemWebUrl": "http://www.sandbox.ebay.com/itm/Szanto-Heritage-Aviator-Watches-Black-Dial-Tan-Strap-Gun-Gray-One-SZ-2757-/110554920324?hash=item19bd963584:i:110554920324", "itemLocation": {"city": "Northbrook", "postalCode": "600**", "country": "US"}, "adultOnly": false, "legacyItemId": "110554920324", "availableCoupons": false, "itemCreationDate": "2024-05-02T20:25:40.000Z", ...REDACTED LINES...}`
 
 ### Selenium and the Description Parsing Issue
-You may have noticed that the output is missing a crucial detail: the item description. According to eBay’s documentation, the shortDescriptions key should hold a short text description of the item. However, this key is not present for most sandbox items.
+You may have noticed that the output is missing a crucial detail: the item description. According to eBay’s documentation, the shortDescriptions key should hold a short text description of the item. However, this value is not present for most sandbox items.
 
-Since eBay formats their item descriptions as markups, effort is needed to scrape the markup data for the item description text. We can retrieve the item listing URL from the `"itemWebUrl"` field, as shown above. This URL can be opened with a Selenium WebDriver, using Chrome in this case.
+Since eBay formats their item descriptions as markups, effort is needed to scrape the markup data from the item description text. We can retrieve the item listing URL from the `"itemWebUrl"` field, as shown above. This URL can be opened with a Selenium WebDriver, using Chrome in this case.
 
 Despite testing simple request parsing, it became clear that the URL must be loaded in a browser to obtain the necessary script containing the item description text. For more details, see `DataScraper/src/scraper.py`.
 
