@@ -17,7 +17,7 @@ We will use data collected with the eBay API datascraper and utilize ColBERT as 
 
 1. **Developing the Knowledge Base**: 
   - Data Collection: Develop a knowledge base using the eBay datascraper. (See the `Datascraper` directory for details.)
-  - Data Organization: Organize the knowledge base into a collection of documents (strings) for ColBERT’s Indexer.
+  - Data Organization: Organize the knowledge base into a collection of documents (strings) for ColBERT’s Indexer. (See the `Database` directory and the `DataCollator` class for details.)
   - Data Indexing: Use ColBERT’s Indexer to process and index the collection, making it searchable. 
 
 2. **Executing the Retrieval Query**: 
