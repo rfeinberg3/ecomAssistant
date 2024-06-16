@@ -114,7 +114,8 @@ The same sample after adding the item description to the dictionary (some lines 
 
 
 ## Future Work
-
-### Notes for future endeavours 
-- For production keysets API usage ratings must be obeyed. Future development should go into caching and retry mechanisms to handle rate limit exceedances gracefully. See `SEE URL` for more details.
-- This is SLOW. Look into threading requests or generally implementing multiprocessing techniques. 
+- Finding the length in of time an item was listed for before it was sold would a fantastic statistic to have. This would allow for a profound recognition of what items are selling well.
+    - This would only matter for production key calls, as sandbox listing dates most likely hardly mean anything.
+    -  This would likely involve using a Sell API or Analytics API call.
+- For production keysets API usage ratings must be obeyed. Production development will need caching and retry mechanisms to handle rate limit exceedances gracefully. 
+- This is SLOW. Look into threading requests or implementing multiprocessing techniques. 
