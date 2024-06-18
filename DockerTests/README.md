@@ -1,5 +1,23 @@
 # Test Documentation
 
+## Setup
+- install docker: []() Mac, Linux, Windows
+- Ensure the docker daemon is running
+
+## Method
+- 
+
+1. Build the Docker image:
+```docker build -t testing:v1 .```
+2. Run the Docker container:
+```docker run testing:v1``` 
+    - Test with `docker run -it testing:v1`
+
+
+## Challenges
+- How to connect a driver to a docker container?
+
+
 This document provides guidance on setting up Docker containers and microservices for testing purposes.
 
 ## Importance of Docker Containerization and Microservice Architecture

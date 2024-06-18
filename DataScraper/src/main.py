@@ -1,10 +1,10 @@
-import sys
-sys.path.append('..')
+#import sys
+#sys.path.append('..')
 import json
-from src.scraper import scraper
+from scraper import scraper
 
 if __name__ == '__main__':
-    keywords_path = "keywords/keywords_large.txt" 
+    keywords_path = "./keywords/keywords_large.txt" 
     with open(keywords_path, 'r') as keyword_file:
         keywords = keyword_file.readlines()
 
