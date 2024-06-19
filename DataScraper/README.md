@@ -1,31 +1,5 @@
 # eBay Item Data Scraper
 
-
-## Background
-
-### Why eBay?
-
-With numerous e-commerce websites available, why choose eBay? While it may not be everyone's favorite e-commerce platform, eBay stands out for several critical reasons:
-
-1. **Open-Source API Support:** eBay is the most well-known e-commerce website that supports open-source RESTful API calls. Unlike more popular services like Facebook Marketplace and OfferUp, eBay offers public APIs.
-
-2. **Extensive Developer Support:** eBay provides consistent updates, maintenance, and community engagement events, ensuring a reliable and up-to-date API service.
-
-3. **Vast and High-Quality Data:** eBay offers superior data quantity and quality compared to sites like Etsy or Shopify. This data is crucial for training a model to generate descriptions of everyday items for resale. Unlike Shopify and Etsy, which cater more to entrepreneurial startups, eBay's data is well-suited for this purpose.
-
-#### eBay’s RESTful APIs
-
-Another reason for using eBay’s API service is its transition from traditional APIs to REST-based APIs. This shift justifies using this service due to several advantages:
-
-- **Scalability:** REST APIs are stateless, making them highly scalable and capable of handling large volumes of requests efficiently.
-
-- **Atomicity of Calls:** Each API call in a RESTful system is atomic, meaning it is complete and self-contained, simplifying error handling and ensuring consistent interactions.
-
-- **Flexibility:** REST APIs are flexible, supporting multiple types of calls and data formats. They can adapt and evolve without breaking existing integrations.
-
-- **Performance:** REST APIs leverage HTTP caching mechanisms, reducing server load and improving response times for better overall performance.
-
-
 ## Setup
 
 ### Install External Libraries
@@ -64,7 +38,32 @@ Clothes
 
 I am prompting a datascraper to search these items and collect there data for model training. Extend the list above with as many items as you deem necessary for a diverse model training dataset. Format your response as newline seperated item keywords like above."""
 
-## Method 
+## Background
+
+### Why eBay?
+
+With numerous e-commerce websites available, why choose eBay? While it may not be everyone's favorite e-commerce platform, eBay stands out for several critical reasons:
+
+1. **Open-Source API Support:** eBay is the most well-known e-commerce website that supports open-source RESTful API calls. Unlike more popular services like Facebook Marketplace and OfferUp, eBay offers public APIs.
+
+2. **Extensive Developer Support:** eBay provides consistent updates, maintenance, and community engagement events, ensuring a reliable and up-to-date API service.
+
+3. **Vast and High-Quality Data:** eBay offers superior data quantity and quality compared to sites like Etsy or Shopify. This data is crucial for training a model to generate descriptions of everyday items for resale. Unlike Shopify and Etsy, which cater more to entrepreneurial startups, eBay's data is well-suited for this purpose.
+
+#### eBay’s RESTful APIs
+
+Another reason for using eBay’s API service is its transition from traditional APIs to REST-based APIs. This shift justifies using this service due to several advantages:
+
+- **Scalability:** REST APIs are stateless, making them highly scalable and capable of handling large volumes of requests efficiently.
+
+- **Atomicity of Calls:** Each API call in a RESTful system is atomic, meaning it is complete and self-contained, simplifying error handling and ensuring consistent interactions.
+
+- **Flexibility:** REST APIs are flexible, supporting multiple types of calls and data formats. They can adapt and evolve without breaking existing integrations.
+
+- **Performance:** REST APIs leverage HTTP caching mechanisms, reducing server load and improving response times for better overall performance.
+
+
+## Notes 
 
 ### Sandbox Mode
 Unfortunately, eBay's production API keys cannot be granted to developer simply because they want to work on a personal project, and will only be granted to companies or individuals under strict contract and monetary promise. However, eBay's generously has created and maintained a rich sandbox environment that allows developers to work/test on a simulated eBay website with all the same API's (for free)! Due to the large amount of quality item postings on sandbox eBay, this means developing this project in this environment hardly comes with any downsides!
