@@ -11,10 +11,8 @@
 Open a script in the `src` directory and start with the imports below to get started. 
 
 ```
-import os, sys
-sys.path.append('..')
 import json
-from src.scraper import scraper
+from scraper import scraper
 ```
 
 `main.py` demonstrates how to use the scraper class, specifically its search_and_scrape() method provides. An important note about this method is that it returns a generator where each iteration is a single search result providing all of an items data. 
