@@ -3,8 +3,16 @@
 ## Setup
 
 ### Install External Libraries
-- `selenium`
-- `requests`
+- Using conda:
+```bash
+conda env create --file requirements.txt --name scraper
+conda activate scraper
+```
+- Using pip:
+```bash
+pip install requests
+pip install selenium
+```
 
 ### Code
 

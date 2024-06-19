@@ -2,9 +2,10 @@
 #sys.path.insert(0, os.path.join(os.path.split(__file__)[0], '..'))
 import requests
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By # Locator object
 import time
-#import json 
+
 from oauthlibrary.oauth_authentication import oauth_authentication
 
 
@@ -17,7 +18,7 @@ class scraper:
 
     # Uses drivers to parse javascript for item description
     def _extract_item_description(self, url):
-        options = webdriver.Chrome() 
+        options = Options() 
         options.add_argument('--headless') # Run browser in the background
         browser = webdriver.Chrome(options=options) 
 
