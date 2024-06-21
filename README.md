@@ -14,7 +14,7 @@ eBay Auto Seller is a tool designed to generate descriptions for items that user
 - **REST APIs**: Scalable and efficient API calls for knowledge base development.
 
 ## Micro-service Graph
-![project_graph.pdf](https://github.com/user-attachments/files/15679582/project_graph.pdf)
+![Project Graph](Images/project_graph.png)
 
 ## Why Microservices?
 
