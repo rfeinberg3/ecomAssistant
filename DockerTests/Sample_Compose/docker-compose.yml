@@ -18,6 +18,6 @@ services:
 
     # Expose port 5001 to the host machine
     ports:
-    - "5001:5001"
+      - "8080:8080"
 
 

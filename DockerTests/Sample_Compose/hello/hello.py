@@ -2,7 +2,7 @@ import socket
 
 def send_message(msg):
 	sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-	sock.connect(("goodbye", 5001))
+	sock.connect(("goodbye", 8080))
 	sock.send(msg.encode())
 	sock.close()
 
