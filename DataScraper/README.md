@@ -13,6 +13,7 @@ conda activate scraper
 pip install requests
 pip install selenium
 ```
+- Eventually this will be its own container.
 
 ### Code
 
