@@ -1,5 +1,3 @@
-#import os, sys
-#sys.path.insert(0, os.path.join(os.path.split(__file__)[0], '..'))
 import requests
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
