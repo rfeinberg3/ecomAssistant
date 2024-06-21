@@ -1,1 +1,2 @@
-This will eventually be its own container.
+- This will eventually be its own container.
+- It may make sense to standardize this to an SQL database.
