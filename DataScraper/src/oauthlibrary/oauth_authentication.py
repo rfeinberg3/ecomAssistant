@@ -1,5 +1,5 @@
-import os, sys
-sys.path.append('..')
+#import os, sys
+#sys.path.append('..')
 import base64
 import requests
 import json
