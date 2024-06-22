@@ -13,6 +13,12 @@ conda activate scraper
 pip install requests
 pip install selenium
 ```
+- Using Docker:
+```bash
+docker build -t eas:scraper .
+docker run eas:scraper
+```
+
 - Eventually this will be its own container.
 
 ### Code
