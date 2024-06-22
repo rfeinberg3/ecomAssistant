@@ -9,10 +9,10 @@ data_dir = os.path.join('..', 'DataScraper', 'outputs')
 def combine_data(directory_path):
 # Combine all item data files into one json file
     combined_data = []
-    for file_path in os.listdir(data_dir):
+    for file_path in os.listdir(directory_path):
         file_path.replace('\n', '?')
         if file_path.endswith('.json'):
-            with open(data_dir + '/' + file_path, 'r') as file:
+            with open(directory_path + '/' + file_path, 'r') as file:
                 try:
                     # Read and combine JSON objects correctly
                     for line in file:
@@ -45,4 +45,4 @@ if __name__ == '__main__':
     df = pd.DataFrame(split_data, columns=['title', 'price', 'condition', 'description']) # Create a DataFrame
 
     # Save to CSV
-    df.to_json('database.json', index=True, indent=4)
+    df.to_json('dataset.json', index=True, indent=4)
