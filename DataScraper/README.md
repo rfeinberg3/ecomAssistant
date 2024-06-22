@@ -19,8 +19,6 @@ docker build -t eas:scraper .
 docker run eas:scraper
 ```
 
-- Eventually this will be its own container.
-
 ### Code
 
 Open a script in the `src` directory and start with the imports below to get started. 
