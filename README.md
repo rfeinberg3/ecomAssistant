@@ -13,6 +13,11 @@ eBay Auto Seller is a tool designed to generate descriptions for items that user
 - **Microservice Architecture**: Using Docker-compose to orchestrate containerization.
 - **REST APIs**: Scalable and efficient API calls for knowledge base development.
 
+### User Stories
+- As an e-commerce user looking to sell used items, I would like to list my item at a reasonable price, as to attract potiental buyers quickly.
+- As an AI developer I would like a tool that allows me to easily scrape useful data about items from e-commerece websites.
+- As a developer (especially one new to this programs code) I would like to be able to easily integrate this program with another e-commerce API, another RAG model, or a different database service.
+
 ## Micro-service Graph
 ![Project Graph](Images/project_graph.png)
 
