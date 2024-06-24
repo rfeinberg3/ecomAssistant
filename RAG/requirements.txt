@@ -1,0 +1,3 @@
+datasets
+huggingface_hub
+-e ColBERT['faiss-cpu','torch']

@@ -12,6 +12,33 @@ Additionally, organizations are investing in RAG models to reduce the high costs
 
 We will use data collected with the eBay API datascraper and utilize ColBERT as a retrieval model to gather relevant documents at query time.
 
+## Usage
+
+### Quick Start
+- Only supports CPU right now!
+- Download Docker Desktop [here](https://www.docker.com/products/docker-desktop/).
+- Build and run the container
+```bash
+docker build -t user:colbert .
+docker run -it user:colbert
+```
+  - This takes some time load initially (~1-2 minutes). Once loaded though answering queries is extremely quick!
+- Or follow the `Testing` section below to test with conda.
+
+### Testing
+- Clone the ColBERT repository into this directory
+```bash
+git -C ColBERT/ pull || git clone https://github.com/stanford-futuredata/ColBERT.git
+```
+- Install dependencies
+```bash
+conda install --file requirements.txt --name colbert
+conda activate colbert
+```
+- Run script
+```bash
+python retrieval.py
+```
 
 ## Method
 
