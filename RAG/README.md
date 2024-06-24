@@ -72,8 +72,7 @@ python retrieval.py
 
 
 ## Future work
-- A CPU and GPU python script will be written for ColBERT search.
-- This service will be containerized eventually as well.
+- GPU python script for ColBERT search.
 
 ### Look into Generative Model Options for Generating item Descriptions
 - [GPT-2 for text generation](https://huggingface.co/openai-community/gpt2/tree/main)
