@@ -19,27 +19,24 @@ docker build -t eas:scraper .
 docker run eas:scraper
 ```
 
-### Code
-
-Open a script in the `src` directory and start with the imports below to get started. 
-
+## Usage
+- Open a script in the `src` directory and start with the imports below to get started. 
 ```
 import json
 from scraper import scraper
 ```
-
-`main.py` demonstrates how to use the scraper class, specifically its search_and_scrape() method provides. An important note about this method is that it returns a generator where each iteration is a single search result providing all of an items data. 
-
-`main.py` iterates through a list of newline seperated keywords searching for up to 200 results for each keyword.
-
+- In [src](https://github.com/rfeinberg3/eBayAutoSeller/tree/main/DataScraper/src), create a text file containing keywords for items you would like data about. 
+- `main.py` demonstrates how to use the scraper class, specifically its search_and_scrape() method provides.
+- `main.py` iterates through a list of newline seperated keywords searching for up to 200 results for each keyword. A decent method for auto-generating a viable list of keywords is described in the [Data](https://github.com/rfeinberg3/eBayAutoSeller/blob/main/DataScraper/README.md#data) section below. 
+- !!! An important note about this method is that it returns a generator where each iteration is a single search result providing all of an items data. 
 
 ## Data
 
-`outputs` was generated using eBay API search calls on a set of keywords with the limit set to 200 (`scraper.search_and_scrape(keyword, 200)`).
+- `outputs` was generated using eBay API search calls on a set of keywords with the limit set to 200 (`scraper.search_and_scrape(keyword, 200)`).
 
-Keyword text file examples can be seen in the `src/keywords` directory. To obtain the lists, ChatGPT-4o was prompted for a keywords list. An example prompt:
-
-"""Give me a common and diverse set of items you would typically find on eBay such as these:
+- Keyword text file examples can be seen in the `src/keywords` directory. To obtain the lists, ChatGPT-4o was prompted for a keywords list. An example prompt:
+```string
+Give me a common and diverse set of items you would typically find on eBay such as these:
 Watch
 Technology
 Cars
@@ -47,7 +44,8 @@ Games
 Shoes
 Clothes
 
-I am prompting a datascraper to search these items and collect there data for model training. Extend the list above with as many items as you deem necessary for a diverse model training dataset. Format your response as newline seperated item keywords like above."""
+I am prompting a datascraper to search these items and collect there data for model training. Extend the list above with as many items as you deem necessary for a diverse model training dataset. Format your response as newline seperated item keywords like above.
+```
 
 ## Background
 
