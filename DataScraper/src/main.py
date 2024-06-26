@@ -16,8 +16,8 @@ if __name__ == '__main__':
     # Call the data scraper and run as a generator
     datascraper = scraper()
     for keyword in keywords:
-        # Max limit is 200 and offset must be a multiple of limit or error will occur. deep_search=True helps to reduce search results that aren't related to the keyword.
-        for data_dump in datascraper.search_and_scrape(keyword, limit='200', offset='0', deep_search=True): 
+        # Max limit is 200 and offset must be a multiple of limit or error will occur. deep_search=False helps to reduce search results that aren't related to the keyword.
+        for data_dump in datascraper.search_and_scrape(keyword, limit='200', offset='0', deep_search=False): 
             create_dir("../outputs")
             keyword = keyword.lower().replace('\n', '')
             with open(f"../outputs/{keyword}_data.json", 'a') as outfile:
