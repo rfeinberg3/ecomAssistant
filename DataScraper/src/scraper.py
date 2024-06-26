@@ -21,7 +21,7 @@ class scraper:
         browser = webdriver.Chrome(options=options) 
 
         browser.get(url) # Load the browser with the given url
-        time.sleep(5) # Wait to let javascript load
+        time.sleep(5) # Wait to let iframe load
 
         description_iframe = browser.find_element(By.TAG_NAME, 'iframe') # Locate the first iframe tag in the webpage HTML (this is where the formated description is)
         
