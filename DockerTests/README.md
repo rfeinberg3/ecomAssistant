@@ -13,13 +13,6 @@
 ```docker run testing:v1``` 
     - Test with `docker run -it testing:v1`
 
-
-## Challenges
-- How to connect a driver to a docker container?
-
-
-This document provides guidance on setting up Docker containers and microservices for testing purposes.
-
 ## Importance of Docker Containerization and Microservice Architecture
 
 ### Docker Containerization
