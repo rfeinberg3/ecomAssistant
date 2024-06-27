@@ -58,7 +58,12 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li>
+      <a href="#usage">Usage</a></li>
+      <ul>
+        <li><a href="#main-program">Main Program</a></li>
+        <li><a href="#ebay-datascraping">eBay DataScraping</a></li>
+      </ul>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
