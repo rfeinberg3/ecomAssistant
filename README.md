@@ -84,11 +84,11 @@ This project aims to streamline the listing process by providing high-quality, a
 ### Method
 
 1. **Developing the Knowledge Base**: 
-  - Data Collection: Develop a knowledge base using the eBay datascraper. (See the `Datascraper` directory for details.)
-  - Data Organization: Organize the knowledge base into a collection of documents (strings) for ColBERT’s Indexer. (See the `Dataset` directory and the `DataCollator` class for details.)
-  - Data Indexing: Use ColBERT’s Indexer to process and index the collection, making it searchable. 
+  - Data Collection: Knowledge base developed with eBay datascraper scripts. (See the `Datascraper` directory for details.)
+  - Data Organization: Organized the knowledge base into a collection of documents (strings) for ColBERT’s Indexer. (See the `Dataset` directory containing the `DataCollator` class for details.)
+  - Data Indexing: Used ColBERT’s Indexer to process and index the collection, making it searchable. 
     - This was done on Google Colab as GPU support is needed for indexing. See `ColBERT_eAS_Indexing.ipynb` notebook for specifics on the indexing process.
-    - The index files can be saved and used later with the Searcher in a different script.
+    - The index files can be saved and used later with the Searcher in a dedicated retrieval script.
 
 2. **Executing the Retrieval Query**: 
   - Query Processing: Once the collection is indexed, ColBERT’s Searcher can take a query and compare it to the indexed documents to find the k best matches.
@@ -96,7 +96,7 @@ This project aims to streamline the listing process by providing high-quality, a
 
 3. **Aggregating Price Data**:
   - Document Retrieval: ColBERT retrieves documents based on the text query (the item’s title), providing information about the k most similar items scraped from eBay.
-  - Price Calculation: Extract the price attribute from each of the k documents and calculate an aggregated price value to suggest to the user for their product.
+  - Price Calculation: Extract the price attribute from each of the k documents, and calculate an aggregated price value to suggest to the user for their product.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
