@@ -152,7 +152,7 @@ _For details on how the dataset for retrieval was created, or how to recreate it
 
 - [x] Build Knowledge base using eBay's RESTful API calls to scrape item data based on keywords.
   - [x] Use Selenium Chrome Drivers to extract item descriptions burried in html and js.
-- Research and test retrieval model to integrate into this program.
+- [x] Research and test retrieval model to integrate into this program.
 - [x] Create dataset builder to format data to ColBERT for indexing and retrieval.
     - [x] Index on colab.
     - [x] Create CPU functional retrieval script.
