@@ -1,7 +1,0 @@
-ersion: '3'
-services:
-  # Define the application
-  python:
-    build: ./
-    environment:
-      - FOO=http://localhost/v2/snaps/chromium

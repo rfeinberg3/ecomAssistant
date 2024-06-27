@@ -1,5 +1,0 @@
-selenium==4.21.0
-pytest
-trio
-pytest-trio
-flake8

@@ -1,8 +1,0 @@
-# Get the latest ubuntu image
-FROM ubuntu:latest
-
-# Set the containers working directory
-WORKDIR /app
-
-# Copy the scripts into the working directory
-COPY src ./src
