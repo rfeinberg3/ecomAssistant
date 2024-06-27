@@ -26,7 +26,7 @@
 <h3 align="center">eBay Auto Seller</h3>
 
   <p align="center">
-    eAS is a tool that generates aggregated item pricing and descriptions from by simply inputing an item's name. It uses ColBERT for Retrieval-Augmented Generation, eBay’s RESTful APIs for knowledge base acquisition, and Docker for microservice orchestration.
+    eAS is a tool that generates aggregated item pricing and descriptions by simply inputing an item's name. It uses ColBERT for Retrieval-Augmented Generation, eBay’s RESTful APIs for knowledge base acquisition, and Docker for microservice orchestration.
     <br>
     <a href="https://github.com/rfeinberg3/eBayAutoSeller/tree/main/documentation"><strong>Explore the docs »</strong></a>
     <br>
