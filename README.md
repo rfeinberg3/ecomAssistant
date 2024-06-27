@@ -85,7 +85,8 @@ eBay Auto Seller is a tool designed to generate aggregate pricing and descriptio
 
 ### Built With
 
-- [![Selenium Chrome Drivers][selenium-badge]][Selenium-url]
+- [![Python][python-badge]][python-url]
+- [![Selenium Chrome Drivers][selenium-badge]][selenium-url]
 - [![Docker][docker-badge]][docker-url]
 - [![Pandas][pandas-badge]][pandas-url]
 - [![JSON][json-badge]][json-url]
@@ -238,6 +239,8 @@ Ryan Feinberg - [LinkedIn](https://www.linkedin.com/in/rfeinberg3/) - rfeinberg3
 [pandas-url]: https://pandas.pydata.org/docs/index.html
 [json-badge]: https://img.shields.io/badge/json-5E5C5C?style=for-the-badge&logo=json&logoColor=white
 [json-url]: https://www.json.org/json-en.html
+[python-badge]: https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue
+[python-url]: https://www.python.org
 [colab-badge]: https://img.shields.io/badge/Colab-F9AB00?style=for-the-badge&logo=googlecolab&color=525252
 [colab-url]: https://colab.research.google.com
 [linux-badge]: https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black
