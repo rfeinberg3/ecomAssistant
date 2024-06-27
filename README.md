@@ -117,9 +117,7 @@ This project aims to streamline the listing process by providing high-quality, a
 
 <!-- GETTING STARTED -->
 ## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Instructions for simple local setup and run are given below. If you would like to see details on how to setup virtual environments for testing, that information is available in the 'RAG' and 'DataScraper' directories.
 
 ### Prerequisites
 - Download Docker Desktop [here](https://www.docker.com/products/docker-desktop/).
