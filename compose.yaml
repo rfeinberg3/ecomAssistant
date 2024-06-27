@@ -1,0 +1,24 @@
+services:
+  # Define the application
+  retrieval:
+    # Build the Dockerfile that's in the IPM directory
+    build: ./RAG
+    # Load the dataset into the volume before building the retrieval service
+    depends_on:
+      - database
+    # Define the directory in the service that connects to the shared volume 
+    volumes:
+      - vol-input-data:/app/output
+    # keep standard input open and assign a terminal for user queries
+    stdin_open: true
+    tty: true
+
+  # Define the database
+  database:
+    build: ./Dataset
+    volumes:
+      - vol-input-data:/app/output
+
+# Define the shared volume  
+volumes:
+  vol-input-data: 
