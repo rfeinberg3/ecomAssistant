@@ -1,6 +1,5 @@
 # Retrieval-Augmented Generation (RAG) Service
 
-
 ## Abstract
 Retrieval-Augmented Generation (RAG) has gained significant traction recently, thanks to many open-source pretrained models like Google’s T5 and Facebook’s BART. Companies are adopting this technology to enhance response accuracy and data fluency.
 
@@ -41,24 +40,6 @@ conda activate colbert
 python retrieval.py
 ```
 
-## Method
-
-1. **Developing the Knowledge Base**: 
-  - Data Collection: Develop a knowledge base using the eBay datascraper. (See the `Datascraper` directory for details.)
-  - Data Organization: Organize the knowledge base into a collection of documents (strings) for ColBERT’s Indexer. (See the `Dataset` directory and the `DataCollator` class for details.)
-  - Data Indexing: Use ColBERT’s Indexer to process and index the collection, making it searchable. 
-    - This was done on Google Colab as GPU support is needed for indexing. See `ColBERT_eAS_Indexing.ipynb` notebook for specifics on the indexing process.
-    - The index files can be saved and used later with the Searcher in a different script.
-
-2. **Executing the Retrieval Query**: 
-  - Query Processing: Once the collection is indexed, ColBERT’s Searcher can take a query and compare it to the indexed documents to find the k best matches.
-  - User Query Input: The user inputs a descriptive title for the item they wish to sell, which the Searcher uses to find relevant documents.
-
-3. **Aggregating Price Data**:
-  - Document Retrieval: ColBERT retrieves documents based on the text query (the item’s title), providing information about the k most similar items scraped from eBay.
-  - Price Calculation: Extract the price attribute from each of the k documents and calculate an aggregated price value to suggest to the user for their product.
-
-
 ## References
 
 ### ColBERTv2
@@ -70,7 +51,6 @@ python retrieval.py
   - Model size is 438MB
   - Trained on MS MARCO Passage Ranking
 - [ColBERT intro colab](https://colab.research.google.com/github/stanford-futuredata/ColBERT/blob/main/docs/intro2new.ipynb#scrollTo=JRiOnzxtwI0j)
-
 
 ## Future work
 - GPU python script for ColBERT search.
