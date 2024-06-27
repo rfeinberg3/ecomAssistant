@@ -16,7 +16,6 @@
 [![Issues][issues-shield]][issues-url]
 -->
 
-
 <!-- PROJECT LOGO -->
 <br>
 <div align="center">
@@ -27,7 +26,7 @@
 <h3 align="center">eBay Auto Seller</h3>
 
   <p align="center">
-    eAS is a tool that generates eBay item descriptions from item names. It uses ColBERT for Retrieval-Augmented Generation, eBay’s RESTful APIs, and Docker for containerization.
+    eAS is a tool that generates aggregated item pricing and descriptions from by simply inputing an item's name. It uses ColBERT for Retrieval-Augmented Generation, eBay’s RESTful APIs, and Docker for microservice orchestration.
     <br>
     <a href="https://github.com/rfeinberg3/eBayAutoSeller/tree/main/documentation"><strong>Explore the docs »</strong></a>
     <br>
@@ -155,10 +154,11 @@ _For details on how the dataset for retrieval was created, or how to recreate it
 - [x] Orchestrate containers with docker compose and shell scripts (deploy ready).
 - [ ] Refactor all code into classes with abstracts where applicable
 - [ ] Add Typing to all classes.
-- [ ] Refactor main README.
+- [x] Refactor main README.
 - [ ] Full Stack Paradigm.
   - [ ] Write frontend with HTML, CSS, and JavaScript (and React potentially) and push to https server.
   - [ ] Refactor this repo into a dedicated backend with Flask.
+  - [ ] Convert the `Dataset` directory into a dedicated Database (postgreSQL). 
 - [ ] Integrate feature to scrape custom item data from eBay, given a users keyword query.
   - [ ] Dynamically update the database when this is used.
 - [ ] Research, test, and integrate a gnerative model to use with this program for item description generation.

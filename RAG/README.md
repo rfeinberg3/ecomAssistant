@@ -18,7 +18,7 @@ We will use data collected with the eBay API datascraper and utilize ColBERT as 
 - Only supports CPU right now!
 - Download Docker Desktop [here](https://www.docker.com/products/docker-desktop/).
 - Build and run the container
-```bash
+```sh
 docker build -t user:colbert .
 docker run -it user:colbert
 ```
@@ -27,16 +27,17 @@ docker run -it user:colbert
 
 ### Testing
 - Clone the ColBERT repository into this directory
-```bash
+```sh
 git -C ColBERT/ pull || git clone https://github.com/stanford-futuredata/ColBERT.git
 ```
 - Install dependencies
-```bash
+```sh
 conda install --file requirements.txt --name colbert
 conda activate colbert
 ```
+- Open retrieval.py and change the path to `path/to/your/dataset.json` in the DataCollator() initialization.
 - Run script
-```bash
+```sh
 python retrieval.py
 ```
 
