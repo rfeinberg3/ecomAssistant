@@ -7,7 +7,7 @@ FROM python:3.9
 WORKDIR /app
 
 # clone or update colbert with git
-COPY . /app
+COPY /Load_ColBERT.sh /app
 RUN chmod +x /app/Load_ColBERT.sh
 RUN /app/Load_ColBERT.sh
 
@@ -15,9 +15,11 @@ RUN /app/Load_ColBERT.sh
 RUN mkdir /output
 
 # Install dependencies
+COPY /requirements.txt /app/requirements.txt
 RUN pip install -r requirements.txt
 
 # Run python script
+COPY /src /app
 ENTRYPOINT ["python", "retrieval.py"]
 
 
