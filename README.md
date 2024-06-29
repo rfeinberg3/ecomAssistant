@@ -86,7 +86,7 @@ This project aims to streamline the listing process by providing high-quality, a
 
 1. **Developing the Knowledge Base**: 
   - Data Collection: Knowledge base developed with eBay datascraper scripts. (See the `Datascraper` directory for details.)
-  - Data Organization: Organized the knowledge base into a collection of documents (strings) for ColBERT’s Indexer. (See the `Dataset` directory containing the `DataCollator` class for details.)
+  - Data Organization: Organized the knowledge base into a collection of documents (strings) for ColBERT’s Indexer. (See the `RAG` directory containing the `DataCollator` class for details.)
   - Data Indexing: Used ColBERT’s Indexer to process and index the collection, making it searchable. 
     - This was done on Google Colab as GPU support is needed for indexing. See `ColBERT_eAS_Indexing.ipynb` notebook for specifics on the indexing process.
     - The index files can be saved and used later with the Searcher in a dedicated retrieval script.
