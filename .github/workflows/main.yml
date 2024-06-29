@@ -1,0 +1,16 @@
+name: Run Bash Script on Push
+
+on: [push]
+
+jobs:
+  run-bash-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Run bash script
+      run: |
+        chmod +x run.sh
+        ./run.sh
