@@ -1,7 +1,7 @@
 services:
   # Define the application
   retrieval:
-    # Build the Dockerfile that's in the IPM directory
+    # Build the Dockerfile that's in the RAG directory
     build: ./RAG
     # Load the dataset into the volume before building the retrieval service
     depends_on:
