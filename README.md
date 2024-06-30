@@ -20,7 +20,7 @@
 <br>
 <div align="center">
   <a href="https://github.com/rfeinberg3/eBayAutoSeller">
-    <img src="images/logo.jpg" alt="Logo" width="80" height="80">
+    <img src="assets/images/logo.jpg" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">eBay Auto Seller (eAS)</h3>
@@ -250,7 +250,7 @@ Ryan Feinberg - [LinkedIn](https://www.linkedin.com/in/rfeinberg3/) - rfeinberg3
 [license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/rfeinberg3
-[product-screenshot]: images/project_graph.png
+[product-screenshot]: assets/images/project_graph.png
 [selenium-badge]: https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=Selenium&logoColor=white
 [selenium-url]: https://www.selenium.dev
 [docker-badge]: https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white
