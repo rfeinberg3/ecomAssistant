@@ -153,11 +153,11 @@ docker compose down
 
 - Loading the program takes around 1 minute.
 
-<img src="images/loading_program.jpg" alt="Loading Process" width=380 />
+<img src="assets/images/loading_program.jpg" alt="Loading Process" width=380 />
 
 - Once loaded query retrieval is almost instant!
 
-<img src="images/user_input.jpg" alt="User Input Paradigm" width=380 />
+<img src="assets/images/user_input.jpg" alt="User Input Paradigm" width=380 />
 
 - Control + C to exit the program. (This destroys all the containers.)
 
