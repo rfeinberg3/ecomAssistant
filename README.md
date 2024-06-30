@@ -182,8 +182,8 @@ _For details on how the dataset for retrieval was created, or how to recreate it
 - [ ] Add Typing to all classes.
 - [x] Refactor main README.
 - [ ] Full Stack Paradigm.
-  - [ ] Write frontend with HTML, CSS, and JavaScript (and React potentially) and push to https server.
-  - [ ] Refactor this repo into a dedicated backend with Flask API calls and Gunicorn.
+  - [ ] Write frontend with HTML, CSS, and JavaScript (and React potentially) and push to cloud server.
+  - [ ] Refactor this repo into a dedicated backend with Flask API calls, Gunicorn, and a cloud provider.
   - [ ] Convert the `Dataset` directory into a dedicated Database (postgreSQL). 
 - [ ] Integrate feature to scrape custom item data from eBay, given a users keyword query.
   - [ ] Dynamically update the database when this is used.
