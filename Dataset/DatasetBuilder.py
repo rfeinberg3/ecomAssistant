@@ -31,7 +31,7 @@ def filter_data(data_list):
         title = normalize_whitespace(item.pop('title'))
         price = item.pop('price')['value'].strip()
         condition = item.pop('condition').strip()
-        description = normalize_whitespace(item.pop('item_description'))
+        description = normalize_whitespace(item.pop('item_description')) # Need to reformat to itemDescription eventually
         filtered_data.add(f"{title}\t{price}\t{condition}\t{description}")
     filtered_data = list(filtered_data)
     return filtered_data # List of tab seperated filtered data
@@ -44,5 +44,5 @@ if __name__ == '__main__':
     split_data = [line.split('\t') for line in filtered_data] # Split each line into a list of values
     df = pd.DataFrame(split_data, columns=['title', 'price', 'condition', 'description']) # Create a DataFrame
 
-    # Save to CSV
+    # Save to json or csv
     df.to_json('dataset.json', index=True, indent=4)
