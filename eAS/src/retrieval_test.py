@@ -1,12 +1,18 @@
 # from ColBERT import colbert
+import sys
+sys.path.append('..')
+sys.path.append('../ColBERT')
 from ColBERT.colbert import Searcher
 from ColBERT.colbert.infra import Run, RunConfig #, ColBERTConfig
 from DataCollator import DataCollator
 
 if __name__ == "__main__":
-    experiment_path = ''
+    # Initiate hyperparemters
     index_name = "collection.kmeans_4iters.2bits"
-    dataset = DataCollator('output/dataset.json')
+    experiment_path = '.'
+    
+    # Get dataset points
+    dataset = DataCollator('./output/dataset.json')
     collection = dataset.get_collection()
     prices = dataset.get_price()
     title = dataset.get_queries()

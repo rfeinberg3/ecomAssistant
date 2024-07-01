@@ -16,9 +16,9 @@ COPY requirements.txt ./requirements.txt
 RUN pip3 install -r requirements.txt
 
 # Set the working directory
-WORKDIR /app/src
+WORKDIR /app
 
 # Copy in the source code
-COPY /src /app/src
+COPY . /app
 
-CMD ["python3", "./main.py"]
+CMD ["python3", "./sandbox_test.py"]

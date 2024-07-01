@@ -1,5 +1,14 @@
 # Project Overview
 
+## Next Steps 
+- Create API end-points for `DataScraper` for extended search and scrape:
+    - POST: (keyword(s), limit, offset)
+    - GET: json item data
+- Create API end-points for `Database` to add scraped items (at any time):
+    - POST: Queries for item data
+    - GET: Item data
+- Create API end-points for `RAG` to request Search.
+
 ## Key Aspects
 - **Retrieval-Augmented Generation (RAG)**: Fast and size efficient document retrieval.
 - **Microservice Architecture**: Using Docker-compose to orchestrate containerization.

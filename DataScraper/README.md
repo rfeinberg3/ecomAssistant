@@ -10,8 +10,7 @@ conda activate scraper
 ```
 - Using pip:
 ```bash
-pip install requests
-pip install selenium
+pip install -r requirements.txt
 ```
 - Using Docker:
 ```bash
