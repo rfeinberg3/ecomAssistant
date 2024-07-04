@@ -1,20 +1,11 @@
-# from ColBERT import colbert
-import os, sys
+from ColBERT import colbert
 from ColBERT.colbert import Searcher
 from ColBERT.colbert.infra import Run, RunConfig #, ColBERTConfig
 from DataCollator import DataCollator
 
-#def set_imports_path():
-
-
-def set_indexFiles_path():
-    index_name = "collection.kmeans_4iters.2bits"
-    #experiment_path = full_path + '/' + 'experiments' 
-    return index_name
-
 if __name__ == "__main__":
     #set_imports_path()
-    index_name = set_indexFiles_path()
+    index_name = "collection.kmeans_4iters.2bits"
 
     # Get dataset points and factor for Search
     dataset = DataCollator('./data/dataset.json')
