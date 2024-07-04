@@ -10,9 +10,8 @@ Additionally, organizations are investing in RAG models to reduce the high costs
 ## Introduction
 
 We will use data collected with the eBay API datascraper and utilize ColBERT as a retrieval model to gather relevant documents at query time.
-
-## Usage
 <!--
+## Usage
 ### Quick Start
 - Only supports CPU right now!
 - Download Docker Desktop [here](https://www.docker.com/products/docker-desktop/).
@@ -24,7 +23,7 @@ docker run -it user:colbert
   - This takes some time load initially (~1-2 minutes). Once loaded though answering queries is extremely quick!
 - Or follow the `Testing` section below to test with conda.
 -->
-### Testing
+## Testing
 - Creating a conda environement:
 ```sh
 cd ColBERT
@@ -35,12 +34,15 @@ conda activate colbert
 ```sh
 pip install install -e ColBERT\[faiss-cpu,torch\]
 ```
-
 - Open retrieval.py and change the path to `path/to/your/dataset.json` in the DataCollator() initialization.
 - Run script
 ```sh
+cd tests
 python retrieval.py
 ```
+
+## Issues 
+- Due to strange loading issues with the Indexing files, the directory needs to be labeled `experiments/default/indexes/INDEX_NAME` in ordered to be properly registered by the `RunConfig()`. It also needs to be in the same directory as the file runnign it.
 
 ## References
 

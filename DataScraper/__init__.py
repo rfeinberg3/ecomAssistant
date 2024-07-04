@@ -1,1 +1,1 @@
-from .src import scraper, oauth, util
+from main import Scraper, Oauth, Util
