@@ -68,5 +68,4 @@ With numerous e-commerce websites available, why choose eBay? While it may not b
 ## Notes for Data Scraper
 
 ### Selenium Docker Image
-- The datascraper needs Selenium and Chrome drivers to by installed to run. Creating a docker container for this will be difficult, but extremely useful, as installing Chrome drivers on a machine that doesn't have them is a less than trivial issue for setting up this program.
 - [Docker Selenium Standalone Chrome Image Documentation](https://hub.docker.com/r/selenium/standalone-chrome)
