@@ -110,6 +110,7 @@ Access to an eBay production keyset is not yet possible. As a consequence, the d
 - [![Python][python-badge]][python-url]
 - [![Selenium Chrome Drivers][selenium-badge]][selenium-url]
 - [![Docker][docker-badge]][docker-url]
+- [![Flask][flask-badge]][flask-url]
 - [![Pandas][pandas-badge]][pandas-url]
 - [![JSON][json-badge]][json-url]
 - [![Google Colab][colab-badge]][colab-url]
@@ -265,3 +266,5 @@ Ryan Feinberg - [LinkedIn](https://www.linkedin.com/in/rfeinberg3/) - rfeinberg3
 [colab-url]: https://colab.research.google.com
 [linux-badge]: https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black
 [linux-url]: https://www.linux.org
+[flask-badge]: https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white
+[flask-url]: https://flask.palletsprojects.com/en/3.0.x/
