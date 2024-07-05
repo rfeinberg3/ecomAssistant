@@ -1,5 +1,5 @@
 import json
-from main import Scraper
+from datascraper import Scraper
 
 if __name__ == '__main__':
     # Set keyset config file path

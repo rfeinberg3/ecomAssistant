@@ -1,1 +1,1 @@
-from main import Scraper, Oauth, Util
+from .datascraper import Scraper, Oauth, Util
