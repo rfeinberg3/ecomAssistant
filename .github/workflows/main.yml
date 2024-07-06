@@ -14,5 +14,6 @@ jobs:
 
       - name: Build and run Docker Compose
         run: |
-          chmod +x /run.sh
-          /run.sh
+          docker compose up --build --detach
+          docker attach ebayautoseller-retrieval-1
+          docker compose down
