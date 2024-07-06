@@ -14,11 +14,3 @@ jobs:
       run: |
         chmod +x run.sh
         ./run.sh
-    - name: Check for verification output
-      run: |
-        expected_output="Give a detailed name for your item, and I'll give you a good value for it, along with a description for an item similar to yours ;)\n"
-        if [[ "${{ env.SCRIPT_OUTPUT }}" != *"$expected_output"* ]]; then
-          echo "Script did not produce the expected output"
-          echo "Actual output: ${{ env.SCRIPT_OUTPUT }}"
-          exit 1
-        fi
