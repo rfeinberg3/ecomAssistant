@@ -14,5 +14,5 @@ jobs:
 
       - name: Build and run Docker container
         run: |
-          chmod +x run.sh
-          ./run.sh
+          docker build -t retriever:test eAS/.
+          docker run retriever:test
