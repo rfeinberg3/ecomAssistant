@@ -20,6 +20,7 @@ if __name__ == "__main__":
 
     query = 'tmp'
     while query != '':
+        
         query = input("\nGive a detailed name for your item, and I'll give you a good value for it, along with a description for an item similar to yours ;)\n\n")
         #query =  # try with an in-range query or supply your own
         print(f"#> {query}")
