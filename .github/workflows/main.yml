@@ -5,12 +5,14 @@ on: [push]
 jobs:
   run-bash-script:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Run bash script
-      run: |
-        chmod +x run.sh
-        ./run.sh
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Build and run Docker container
+        run: |
+          chmod +x run.sh
+          ./run.sh
