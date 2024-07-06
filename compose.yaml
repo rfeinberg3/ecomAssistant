@@ -15,7 +15,7 @@ services:
 
   # Define the database
   database:
-    build: ./Dataset
+    build: ./Database
     volumes:
       - vol-input-data:/app/output
 

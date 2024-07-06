@@ -9,7 +9,7 @@ WORKDIR /app
 # Copy in ColBERT library
 COPY ColBERT /app/ColBERT
 
-# Create directory to store volume dataset
+# Create directory to retrieve volume dataset
 RUN mkdir /output
 
 # Install dependencies
@@ -17,7 +17,8 @@ COPY requirements.txt /app/requirements.txt
 RUN pip install -r requirements.txt
 
 # Run python script
-COPY /src /app
+COPY /tests /app
+COPY /experiments /app/experiments
 ENTRYPOINT ["python", "retrieval_test.py"]
 
 
