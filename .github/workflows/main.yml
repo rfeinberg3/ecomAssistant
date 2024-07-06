@@ -12,7 +12,7 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
 
-      - name: Build and run Docker container
+      - name: Build and run Docker Compose
         run: |
-          docker build -t retriever:test eAS/.
-          docker run retriever:test
+          chmod +x /run.sh
+          /run.sh
