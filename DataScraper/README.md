@@ -24,9 +24,9 @@ docker run eas:scraper
 import json
 from scraper import scraper
 ```
-- In [src/keywords](https://github.com/rfeinberg3/eBayAutoSeller/tree/main/DataScraper/src/keywords), create a text file containing keywords for items you would like data about. 
-- `src/main.py` demonstrates how to use the scraper class, specifically its search_and_scrape() method.
-- `src/main.py` iterates through a list of newline seperated keywords searching for up to 200 results for each keyword. A decent method for auto-generating a viable list of keywords is described in the [Data](https://github.com/rfeinberg3/eBayAutoSeller/blob/main/DataScraper/README.md#data) section below. 
+- In [./keywords](https://github.com/rfeinberg3/eBayAutoSeller/tree/main/DataScraper/keywords), create a text file containing keywords for items you would like data about. 
+- `tests/sandbox_test.py` demonstrates how to use the scraper class, specifically its search_and_scrape() method.
+- `tests/sandbox_test.py` iterates through a list of newline seperated keywords searching for up to 200 results for each keyword. A decent method for auto-generating a viable list of keywords is described in the [Data](https://github.com/rfeinberg3/eBayAutoSeller/blob/main/DataScraper/README.md#data) section below. 
 - !!! An important note about this method is that it **yields** a generator where each iteration is a single search result providing all of an items data. 
 
 ## Data
