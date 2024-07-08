@@ -26,14 +26,14 @@ from datacraper import Scraper
 ```
 - In [./keywords](https://github.com/rfeinberg3/eBayAutoSeller/tree/main/DataScraper/keywords), create a text file containing keywords for items you would like data about. 
 - `tests/sandbox_test.py` demonstrates how to use the scraper class, specifically its search_and_scrape() method.
-- `tests/sandbox_test.py` iterates through a list of newline seperated keywords searching for up to 200 results for each keyword. A decent method for auto-generating a viable list of keywords is described in the [Data](https://github.com/rfeinberg3/eBayAutoSeller/blob/main/DataScraper/README.md#data) section below. 
-- !!! An important note about this method is that it **yields** a generator where each iteration is a single search result providing all of an items data. 
+- `tests/sandbox_test.py` iterates through a list of newline-separated keywords searching for up to 200 results for each keyword. A decent method for auto-generating a viable list of keywords is described in the [Data](https://github.com/rfeinberg3/eBayAutoSeller/blob/main/DataScraper/README.md#data) section below. 
+- !!! An important note about this method is that it **yields** a generator where each iteration is a single search result providing all of an item's data. 
 
 ## Data
 
 - [outputs](https://github.com/rfeinberg3/eBayAutoSeller/tree/main/DataScraper/outputs) was generated using eBay API search calls on a set of keywords with the limit set to 200 (`Scraper.search_and_scrape(keyword, 200)`).
 
-- Keyword text file examples can be seen in the [src/keywords](https://github.com/rfeinberg3/eBayAutoSeller/tree/main/DataScraper/src/keywords) directory. To obtain the lists, ChatGPT-4o was prompted for a keywords list. An example prompt:
+- Keyword text file examples can be seen in the [src/keywords](https://github.com/rfeinberg3/eBayAutoSeller/tree/main/DataScraper/src/keywords) directory. To obtain the lists, ChatGPT-4o was prompted for a keyword list. An example prompt:
 ```string
 Give me a common and diverse set of items you would typically find on eBay such as these:
 Watch
@@ -43,7 +43,7 @@ Games
 Shoes
 Clothes
 
-I am prompting a datascraper to search these items and collect there data for model training. Extend the list above with as many items as you deem necessary for a diverse model training dataset. Format your response as newline seperated item keywords like above.
+I am prompting a data scraper to search these items and collect their data for model training. Extend the list above with as many items as you deem necessary for a diverse model training dataset. Format your response as a newline separated item keywords like above.
 ```
 
 ## Background
@@ -74,7 +74,7 @@ Another reason for using eBay’s API service is its transition from traditional
 ## Notes 
 
 ### Sandbox Mode
-Unfortunately, eBay's production API keys cannot be granted to developer simply because they want to work on a personal project, and will only be granted to companies or individuals under strict contract and monetary promise. However, eBay's generously has created and maintained a rich sandbox environment that allows developers to work/test on a simulated eBay website with all the same API's (for free)! Due to the large amount of quality item postings on sandbox eBay, this means developing this project in this environment hardly comes with any downsides!
+Unfortunately, eBay's production API keys cannot be granted to developers simply because they want to work on a personal project, and will only be granted to companies or individuals under strict contract and monetary promise. However, eBay generously has created and maintained a rich sandbox environment that allows developers to work/test on a simulated eBay website with all the same APIs (for free)! Due to the large amount of quality item postings on Sandbox eBay, this means developing this project in this environment hardly comes with any downsides!
 
 #### Signing Up to be a Developer
 Signing up with eBay's developer program to access their sandbox APIs is simple and only takes a day for verification. Follow this link to sign up for API access (it's free!): [eBay Developer Program](https://developer.ebay.com/develop/get-started)
@@ -121,7 +121,7 @@ The same sample after adding the item description to the dictionary (some lines 
 
 
 ## Future Work
-- Finding the length in of time an item was listed for before it was sold would a fantastic statistic to have. This would allow for a profound recognition of what items are selling well.
+- Finding the length of time an item was listed before it was sold would be a fantastic statistic to have. This would allow for a profound recognition of what items are selling well.
     - This would only matter for production key calls, as sandbox listing dates most likely hardly mean anything.
     -  This would likely involve using a Sell API or Analytics API call.
 - For production keysets API usage ratings must be obeyed. Production development will need caching and retry mechanisms to handle rate limit exceedances gracefully. 
