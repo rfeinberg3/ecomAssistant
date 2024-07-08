@@ -9,7 +9,7 @@ Additionally, organizations are investing in RAG models to reduce the high costs
 
 ## Introduction
 
-We will use data collected with the eBay API datascraper and utilize ColBERT as a retrieval model to gather relevant documents at query time.
+We will use data collected with the eBay API data scraper and utilize ColBERT as a retrieval model to gather relevant documents at query time.
 <!--
 ## Usage
 ### Quick Start
@@ -24,7 +24,7 @@ docker run -it user:colbert
 - Or follow the `Testing` section below to test with conda.
 -->
 ## Testing
-- Creating a conda environement:
+- Creating a conda environment:
 ```sh
 cd ColBERT
 conda env create -f conda_env_cpu.yml
@@ -42,7 +42,7 @@ python retrieval.py
 ```
 
 ## Issues 
-- Due to strange loading issues with the Indexing files, the directory needs to be labeled `experiments/default/indexes/INDEX_NAME` in ordered to be properly registered by the `RunConfig()`. It also needs to be in the same directory as the file runnign it.
+- Due to strange loading issues with the Indexing files, the directory needs to be labeled `experiments/default/indexes/INDEX_NAME` to be properly registered by the `RunConfig()`. It also needs to be in the same directory as the file running it.
 
 ## References
 
@@ -59,7 +59,7 @@ python retrieval.py
 ## Future work
 - GPU python script for ColBERT search.
 
-### Look into Generative Model Options for Generating item Descriptions
+### Look into Generative Model Options for Generating Item Descriptions
 - [GPT-2 for text generation](https://huggingface.co/openai-community/gpt2/tree/main)
 - BERT for fill-in-mask generation or question-answer generation? The masked part could be the item descriptions!
   - [BERT-base-uncased on Hugging Face](https://huggingface.co/google-bert/bert-base-uncased/tree/main)
@@ -74,7 +74,7 @@ python retrieval.py
 ## Discussion
 
 **Other Models**
-- There are other open-source models for RAG architecture out there that could be used as well.
+- Other open-source models for RAG architecture out there could be used as well.
 - One such example is Facebook's RAG-Token Model, a neat tokenizer-retriever-model pipeline. However, this pipeline would require lots of reconstruction to set up for our use case and doesn't have much supporting documentation (any really) to aid in this endeavor.
 - Constructing a pipeline from scratch with the RAGatouille library seems to be a much more efficient process, provided the large amount of resources present in their framework.
 
