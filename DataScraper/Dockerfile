@@ -3,6 +3,9 @@
 # Pull the selenium image with chrome driver. Setting the platform is necessary for ARM based machines.
 FROM --platform=linux/amd64 selenium/standalone-chrome:126.0-chromedriver-126.0
 
+# Set the working directory
+WORKDIR /app
+
 # Install Python and pip
 USER root
 RUN apt-get update && \
@@ -12,13 +15,19 @@ RUN apt-get update && \
 RUN ln -s /usr/bin/python3 
 
 # Install dependencies
-COPY requirements.txt ./requirements.txt
+COPY /requirements.txt /app/requirements.txt
 RUN pip3 install -r requirements.txt
 
-# Set the working directory
-WORKDIR /app
-
 # Copy in the source code
-COPY . /app
+COPY /tests/sandbox_test.py /app/sandbox_test.py
+COPY /keywords /app/keywords
+COPY /datascraper/ /app/datascraper
+COPY /config /app/config
 
-CMD ["python3", "./sandbox_test.py"]
+# Create directory to retrieve volume dataset
+RUN mkdir /volume && \
+    cd /volume && \
+    mkdir /outputs && \
+    cd /..
+
+CMD ["python3", "sandbox_test.py"]

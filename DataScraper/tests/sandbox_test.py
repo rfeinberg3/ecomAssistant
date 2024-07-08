@@ -1,12 +1,18 @@
 import json
+import os
 from datascraper import Scraper
 
 if __name__ == '__main__':
+        
+        # Ensure the output directory exists
+        output_dir = "volume/outputs"
+        os.makedirs(output_dir, exist_ok=True)
+
         # Set keyset config file path
-        keysetConfigPath = "./config/account-credentials.json"
+        keysetConfigPath = "config/account-credentials.json"
         
         # Set path to keyword file you wish to use and read data
-        keywords_path = "./keywords/keywords_large.txt" 
+        keywords_path = "keywords/keywords_large.txt" 
         with open(keywords_path, 'r') as keyword_file:
             keywords = keyword_file.readlines()
 
@@ -18,7 +24,7 @@ if __name__ == '__main__':
             # Use search_and_scrape() as a generator, aka itereator, that scrapes up to 200 items per key word.
             for data_dump in datascraper.search_and_scrape(keyword, limit='200'): 
                 data_dump['keyword'] = keyword # May be important later.
-                with open(f"./outputs/{keyword}_data.json", 'a') as outfile:
+                with open(f"{output_dir}/{keyword}_data.json", 'a') as outfile:
                     json.dump(data_dump, outfile)
                     outfile.write("\n")
 

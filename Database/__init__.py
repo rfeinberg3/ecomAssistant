@@ -1,1 +1,1 @@
-from .database import Setbuilder
+from .setbuilder import Setbuilder

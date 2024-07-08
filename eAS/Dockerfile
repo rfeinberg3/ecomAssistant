@@ -10,7 +10,7 @@ WORKDIR /app
 COPY ColBERT /app/ColBERT
 
 # Create directory to retrieve volume dataset
-RUN mkdir /output
+RUN mkdir /outputs
 
 # Install dependencies
 COPY requirements.txt /app/requirements.txt

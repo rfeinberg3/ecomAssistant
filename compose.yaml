@@ -8,16 +8,24 @@ services:
       - database
     # Define the directory in the service that connects to the shared volume 
     volumes:
-      - vol-input-data:/app/output
+      - vol-input-data:/app/volume
     # keep standard input open and assign a terminal for user queries
     stdin_open: true
     tty: true
+  
+  # Define datascraper
+  scraper:
+    build: ./DataScraper
+    volumes:
+      - vol-input-data:/app/volume
 
   # Define the database
   database:
     build: ./Database
+    depends_on:
+      - scraper
     volumes:
-      - vol-input-data:/app/output
+      - vol-input-data:/app/volume
 
 # Define the shared volume  
 volumes:
