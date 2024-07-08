@@ -22,7 +22,7 @@ docker run eas:scraper
 - Open a script in the [src](https://github.com/rfeinberg3/eBayAutoSeller/tree/main/DataScraper/src) directory and start with the imports below to get started. 
 ```
 import json
-from scraper import scraper
+from datacraper import Scraper
 ```
 - In [./keywords](https://github.com/rfeinberg3/eBayAutoSeller/tree/main/DataScraper/keywords), create a text file containing keywords for items you would like data about. 
 - `tests/sandbox_test.py` demonstrates how to use the scraper class, specifically its search_and_scrape() method.
@@ -31,7 +31,7 @@ from scraper import scraper
 
 ## Data
 
-- [outputs](https://github.com/rfeinberg3/eBayAutoSeller/tree/main/DataScraper/outputs) was generated using eBay API search calls on a set of keywords with the limit set to 200 (`scraper.search_and_scrape(keyword, 200)`).
+- [outputs](https://github.com/rfeinberg3/eBayAutoSeller/tree/main/DataScraper/outputs) was generated using eBay API search calls on a set of keywords with the limit set to 200 (`Scraper.search_and_scrape(keyword, 200)`).
 
 - Keyword text file examples can be seen in the [src/keywords](https://github.com/rfeinberg3/eBayAutoSeller/tree/main/DataScraper/src/keywords) directory. To obtain the lists, ChatGPT-4o was prompted for a keywords list. An example prompt:
 ```string
