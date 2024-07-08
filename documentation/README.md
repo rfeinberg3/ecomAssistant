@@ -3,7 +3,7 @@
 ## Next Steps 
 - Create API end-points for `DataScraper` for extended search and scrape:
     - POST: (keyword(s), limit, offset)
-    - GET: json item data
+    - GET: JSON item data
 - Create API end-points for `Database` to add scraped items (at any time):
     - POST: Queries for item data
     - GET: Item data
@@ -15,9 +15,9 @@
 - **REST APIs**: Scalable and efficient API calls for knowledge base development.
 
 ## User Stories
-- As an e-commerce user looking to sell used items, I would like to list my item at a reasonable price, as to attract potiental buyers quickly.
-- As an AI developer I would like a tool that allows me to easily scrape useful data about items from e-commerece websites.
-- As a developer (especially one new to this programs code) I would like to be able to easily integrate this program with another e-commerce API, another RAG model, or a different database service.
+- As an e-commerce user looking to sell used items, I would like to list my items at a reasonable price, to attract potential buyers quickly.
+- As an AI developer I would like a tool that allows me to easily scrape useful data about items from e-commerce websites.
+- As a developer (especially one new to this program's code) I would like to easily integrate this program with another e-commerce API, another RAG model, or a different database service.
 
 
 ## Why Microservices?
@@ -46,7 +46,7 @@ With numerous e-commerce websites available, why choose eBay? While it may not b
 
 ### Searching ColBERTv2
 - This will be the main mechanism for the RAG portion of this project, and involves finding relevant data within an indexed database given a user query.
-- Development of search on CPU is possible given a preindexed database, and will be developed before GPU search due to versitility of CPU-based programs. 
+- Development of search on CPU is possible given a pre-indexed database, and will be developed before GPU search due to versatility of CPU-based programs. 
 
 ### Indexing ColBERTv2
 - Indexing requires a list of passage strings to be fed to the indexer.
