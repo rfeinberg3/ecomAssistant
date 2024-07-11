@@ -1,1 +1,2 @@
 -e ColBERT['faiss-cpu','torch']
+flask_cors

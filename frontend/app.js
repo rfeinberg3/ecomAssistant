@@ -1,6 +1,6 @@
 // Define base API call parameters
-let port = '5001';
-let url = `http://localhost:${port}/api/search`;
+let port = '5050';
+let url = `http://127.0.0.1:${port}/api/search`;
 
 // Define the main function
 async function main() {
@@ -30,7 +30,7 @@ async function getData(url, input) {
   :return: JSON eAS object from search on input
   :rtype: JSON object
   */
-  let response = await fetch(`${url}/${model}?input=${encodeURIComponent(input)}`);
+  let response = await fetch(`${url}/${model}?query=${encodeURIComponent(input)}&k=${0}`);
   return response.json();
 }
 

@@ -16,9 +16,12 @@ RUN mkdir /outputs
 COPY requirements.txt /app/requirements.txt
 RUN pip install -r requirements.txt
 
+# Expose Port
+EXPOSE 5050:5050
+
 # Run python script
-COPY /tests /app
+COPY /bin /app
 COPY /experiments /app/experiments
-ENTRYPOINT ["python", "retrieval_test.py"]
+ENTRYPOINT ["python", "api_retrieval.py"]
 
 

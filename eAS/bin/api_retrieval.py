@@ -1,21 +1,33 @@
 from flask import Flask, render_template, request
+from flask_cors import CORS
 from functools import lru_cache
 import math
-import sys
-import os
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from ColBERT.colbert.infra import Run, RunConfig, ColBERTConfig
 from ColBERT.colbert import Searcher
+from DataCollator import DataCollator
 
+# Set Indexer data path
+index_name = "collection.kmeans_4iters.2bits"
 
-INDEX_NAME = os.getenv("INDEX_NAME")
-INDEX_ROOT = os.getenv("INDEX_ROOT")
+# Get dataset points and factor for Search
+dataset = DataCollator('./data/dataset.json')
+title = dataset.get_queries()
+prices = dataset.get_price()
+collection = dataset.get_collection()
+
+# Set Flask App
 app = Flask(__name__)
+CORS(app)
 
-searcher = Searcher(index=INDEX_NAME, index_root=INDEX_ROOT)
+# Set Searcher
+with Run().context(RunConfig()):
+        searcher = Searcher(index=index_name, collection=collection)
+
+# Set api call counter
 counter = {"api" : 0}
 
+# Main Function
 @lru_cache(maxsize=1000000)
 def api_search_query(query, k):
     print(f"Query={query}")
@@ -34,6 +46,7 @@ def api_search_query(query, k):
     topk = list(sorted(topk, key=lambda p: (-1 * p['score'], p['pid'])))
     return {"query" : query, "topk": topk}
 
+# API Call Function
 @app.route("/api/search", methods=["GET"])
 def api_search():
     if request.method == "GET":
@@ -44,4 +57,4 @@ def api_search():
         return ('', 405)
 
 if __name__ == "__main__":
-    app.run("0.0.0.0", int(os.getenv("PORT")))
+    app.run("0.0.0.0", port=5050, debug=True)
