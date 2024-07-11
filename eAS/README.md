@@ -32,7 +32,7 @@ conda activate colbert
 ```
 - With pip:
 ```sh
-pip install install -e ColBERT\[faiss-cpu,torch\]
+pip install -e ColBERT\[faiss-cpu,torch\]
 ```
 - Open retrieval.py and change the path to `path/to/your/dataset.json` in the DataCollator() initialization.
 - Run script
