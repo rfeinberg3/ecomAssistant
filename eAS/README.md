@@ -38,7 +38,7 @@ pip install install -e ColBERT\[faiss-cpu,torch\]
 - Run script
 ```sh
 cd tests
-python retrieval.py
+python retrieval_test.py
 ```
 
 ## Issues 

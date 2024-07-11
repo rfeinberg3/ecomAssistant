@@ -3,7 +3,6 @@ from functools import lru_cache
 import math
 import os
 
-from ColBERT import colbert
 from ColBERT.colbert.infra import Run, RunConfig, ColBERTConfig
 from ColBERT.colbert import Searcher
 
