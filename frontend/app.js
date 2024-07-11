@@ -35,8 +35,8 @@ async function getData(url, input) {
 }
 
 // Update output field
-function updateOutput(topTokens) {
-    const output = `Top Tokens: [${topTokens[0]}, ${topTokens[1]}, ${topTokens[2]}]`;
+function updateOutput(topDescriptions) {
+    const output = `Output: ${topDescriptions}`;
     document.getElementById("output").innerHTML = output;
 }
 

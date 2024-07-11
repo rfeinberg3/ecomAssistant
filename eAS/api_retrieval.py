@@ -1,7 +1,9 @@
 from flask import Flask, render_template, request
 from functools import lru_cache
 import math
+import sys
 import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from ColBERT.colbert.infra import Run, RunConfig, ColBERTConfig
 from ColBERT.colbert import Searcher
