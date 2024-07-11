@@ -1,6 +1,5 @@
 import os
 import pandas as pd
-import time
 from setbuilder import Setbuilder
 
 if __name__ == '__main__':
