@@ -42,7 +42,7 @@ python retrieval_test.py
 ```
 
 ## Issues 
-- Due to strange  files, the directory needs to be labeled `experiments/default/indexes/INDEX_NAME` to be properly registered by the `RunConfig()`. It also needs to be in the same directory as the file running it.
+- Due to strange loading issues with the Indexing files, the directory needs to be labeled `experiments/default/indexes/INDEX_NAME` to be properly registered by the `RunConfig()`. It also needs to be in the same directory as the file running it.
 
 ## References
 
