@@ -31,7 +31,7 @@
     <a href="https://github.com/rfeinberg3/eBayAutoSeller/tree/main/documentation"><strong>Explore the docs »</strong></a>
     <br>
     <br>
-    <a href="https://github.com/rfeinberg3/eBayAutoSeller/tree/main/documentation/demos">View Demo</a>
+    <a href="#demo">View Demo</a>
     ·
     <a href="https://github.com/rfeinberg3/eBay_Auto_Seller/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
