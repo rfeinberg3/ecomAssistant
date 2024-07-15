@@ -18,4 +18,4 @@ RUN mkdir /volume && \
     mkdir /sets && \
     cd /..
 
-ENTRYPOINT [ "python", "test_build.py" ]
+ENTRYPOINT ["python", "test_build.py"]
