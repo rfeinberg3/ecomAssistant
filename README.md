@@ -66,6 +66,7 @@
         <li><a href="#main-program">Main Program</a></li>
         <li><a href="#ebay-datascraping">eBay DataScraping</a></li>
       </ul>
+    <li><a href="#demo">Demo</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -152,20 +153,15 @@ docker attach ebayautoseller-retrieval-1
 docker compose down
 ```
 
-- Loading the program takes around 1 minute.
-
-<img src="assets/images/loading_program.jpg" alt="Loading Process" width=380 />
-
-- Once loaded query retrieval is almost instant!
-
-<img src="assets/images/user_input.jpg" alt="User Input Paradigm" width=380 />
-
-- Control + C to exit the program. (This destroys all the containers.)
-
 ### eBay DataScraping
 _For details on how the dataset for retrieval was created, or how to recreate it for yourself, please refer to the [DataScraper Directory](https://github.com/rfeinberg3/eBayAutoSeller/tree/main/DataScraper). Setup is super easy!_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Demo
+Loading the program takes around 1 minute. Once loaded query retrieval is almost instant! Control + C to exit the program. (This destroys all the containers.)
+
+![Demo Video](assets/demos/demo.gif)
 
 
 <!-- ROADMAP -->
