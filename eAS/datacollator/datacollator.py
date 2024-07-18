@@ -6,7 +6,7 @@ class DataCollator:
             self.data = json.load(file)
 
     def get_collection(self):
-        return [passage for passage in self.data['description'].values()]
+        return [passage for passage in self.data['itemDescription'].values()]
 
     def get_queries(self):
         return [query for query in self.data['title'].values()]
