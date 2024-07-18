@@ -1,6 +1,7 @@
 import json
 import os
-from datascraper import Scraper
+from datascraper import Scraper, ScraperUtil
+
 
 if __name__ == '__main__':
         
@@ -11,20 +12,27 @@ if __name__ == '__main__':
         # Set keyset config file path
         keysetConfigPath = "config/account-credentials.json"
         
-        # Set path to keyword file you wish to use and read data
-        keywords_path = "keywords/keywords_large.txt" 
-        with open(keywords_path, 'r') as keyword_file:
-            keywords = keyword_file.readlines()
+        # Get name of each keywords file in keywords directory
+        util = ScraperUtil()
+        keywords_dir = 'keywords'
+        file_names = util.get_filenames(directory=keywords_dir, file_type='.md')
+
+        # Read data from each file in file_names
+        for file_name in file_names:
+            keywords_list = []
+            with open(keywords_dir+'/'+file_name, 'r') as keyword_file:
+                keywords = keyword_file.readlines()
+            keywords_list += keywords
 
         # Call the data scraper and run as a generator
         datascraper = Scraper(environment='SANDBOX', keyset='DataScraper', keysetConfigPath=keysetConfigPath)
-        for keyword in keywords:
+        for keyword in keywords_list:
             keyword = keyword.lower().replace('\n', '')
             print(f"Scraping items related to '{keyword}'...")
             # Use search_and_scrape() as a generator, aka itereator, that scrapes up to 200 items per key word.
             for data_dump in datascraper.search_and_scrape(keyword, limit='200'): 
                 data_dump['keyword'] = keyword # May be important later.
-                with open(f"{output_dir}/{keyword}_data.json", 'a') as outfile:
+                with open(f"{output_dir}/data_{keyword}.json", 'a') as outfile:
                     json.dump(data_dump, outfile)
                     outfile.write("\n")
 

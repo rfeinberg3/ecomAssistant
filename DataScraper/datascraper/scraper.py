@@ -34,7 +34,7 @@ class Scraper:
             keyword: str,
             limit: str = '1',
             offset: str = '0',
-            deepSearch: bool = False):
+            deepSearch: bool = False) -> iter[dict]:
         '''
           See how POST requests for RESTful API search calls are formatted below: \n
         https://developer.ebay.com/api-docs/buy/browse/resources/item_summary/methods/search

@@ -20,7 +20,6 @@ RUN pip3 install -r requirements.txt
 
 # Copy in the source code
 COPY /tests/sandbox_test.py /app/sandbox_test.py
-COPY /keywords /app/keywords
 COPY /datascraper/ /app/datascraper
 COPY /config /app/config
 
@@ -29,5 +28,8 @@ RUN mkdir /volume && \
     cd /volume && \
     mkdir /outputs && \
     cd /..
+
+# Copy in keywords list(s) to scrape
+COPY /keywords/antiques-and-collectibles-keywords.md /app/keywords/antiques-and-collectibles-keywords.md
 
 CMD ["python3", "sandbox_test.py"]
