@@ -30,6 +30,6 @@ RUN mkdir /volume && \
     cd /..
 
 # Copy in keywords list(s) to scrape
-COPY /keywords/antiques-and-collectibles-keywords.md /app/keywords/antiques-and-collectibles-keywords.md
+COPY /keywords /app/keywords
 
 CMD ["python3", "sandbox_test.py"]

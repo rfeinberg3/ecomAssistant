@@ -18,17 +18,14 @@ if __name__ == '__main__':
         file_names = util.get_filenames(directory=keywords_dir, file_type='.md')
 
         # Read data from each file in file_names
-        for file_name in file_names:
-            keywords_list = []
-            with open(keywords_dir+'/'+file_name, 'r') as keyword_file:
-                keywords = keyword_file.readlines()
-            keywords_list += keywords
+        keywords = util.read_files(directory=keywords_dir, list_of_filenames=file_names)
+        print(f"Keywords to Scrape: {len(keywords)}\n")
 
         # Call the data scraper and run as a generator
         datascraper = Scraper(environment='SANDBOX', keyset='DataScraper', keysetConfigPath=keysetConfigPath)
-        for keyword in keywords_list:
+        for keyword, i in enumerate(keywords):
             keyword = keyword.lower().replace('\n', '')
-            print(f"Scraping items related to '{keyword}'...")
+            print(f"Scraping items related to '{keyword}'... {len(keywords)-i} keywords left.")
             # Use search_and_scrape() as a generator, aka itereator, that scrapes up to 200 items per key word.
             for data_dump in datascraper.search_and_scrape(keyword, limit='200'): 
                 data_dump['keyword'] = keyword # May be important later.
