@@ -1,7 +1,11 @@
+import os, sys
+sys.path.append('..')
+
 from ColBERT import colbert
 from ColBERT.colbert import Searcher
 from ColBERT.colbert.infra import Run, RunConfig #, ColBERTConfig
-from DataCollator import DataCollator
+from datacollator import DataCollator
+
 
 if __name__ == "__main__":
     #set_imports_path()
