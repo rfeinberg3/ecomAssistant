@@ -5,24 +5,18 @@ import math
 
 from ColBERT.colbert.infra import Run, RunConfig, ColBERTConfig
 from ColBERT.colbert import Searcher
-from DataCollator import DataCollator
-
-# Set Indexer data path
-index_name = "collection.kmeans_4iters.2bits"
-
-# Get dataset points and factor for Search
-dataset = DataCollator('./data/dataset.json')
-title = dataset.get_queries()
-prices = dataset.get_price()
-collection = dataset.get_collection()
+#from datacollator import DataCollator
 
 # Set Flask App
 app = Flask(__name__)
 CORS(app)
 
+# Set Indexer data path
+index_name = "collection.kmeans_4iters.2bits"
+
 # Set Searcher
 with Run().context(RunConfig()):
-        searcher = Searcher(index=index_name, collection=collection)
+        searcher = Searcher(index=index_name) #collection=collection !! Add this parameter most likely!!
 
 # Set api call counter
 counter = {"api" : 0}
