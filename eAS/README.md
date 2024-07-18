@@ -30,7 +30,7 @@ cd ColBERT
 conda env create -f conda_env_cpu.yml
 conda activate colbert
 ```
-- With pip:
+- And install the required path dependencies with pip:
 ```sh
 pip install -e ColBERT\[faiss-cpu,torch\]
 ```
