@@ -1,11 +1,9 @@
+from typing import Literal
 import requests
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By # Locator object
 from .oauthlibrary import Oauth
-
-SANDBOX = 'SANDBOX'
-PRODUCTION = 'PRODUCTION'
 
 class Scraper:
     '''
@@ -13,14 +11,14 @@ class Scraper:
     Calling the main method `search_and_scrape` with desired parameters returns a generator which returns \n
     all available item details on each iteration.
 
-    Args:  
-        environement (str): 'SANDBOX' or 'PRODUCTION' for sandbox or production keyset respectively.
-        keyset (str): Name of your keyset.
-        keysetConfigPath (str): Path to you keyset config file containing your keyset credentails.
+    ### Args:  
+        - environement (str): 'SANDBOX' or 'PRODUCTION' for sandbox or production keyset respectively.
+        - keyset (str): Name of your keyset.
+        - keysetConfigPath (str): Path to you keyset config file containing your keyset credentails.
     '''
     def __init__(
             self,
-            environment: str,
+            environment: Literal['SANDBOX', 'PRODUCTION'],
             keyset: str,
             keysetConfigPath: str,
         ) -> None:
@@ -42,11 +40,14 @@ class Scraper:
           Max limit is 200 and offset must be a multiple of limit or error will occur. \n
         deepSearch=True looks into an items description for keyword references.
 
-        Args:
+        ### Args:
             - keyword: A string word used by eBay's search call to find pertinent item listings.
             - limit: The max number of items to return from the search call. Max limit is 200.
             - offset: how many items to skip over before beginning to return them. Must be a multiple of limit or error will occur.
             - deepSearch: If True, looks an items description for instances of keywords. (Should usually be ignored).
+
+        ### Returns 
+            - A Generator object where each itereation contains a json-like dictionary of item detail content scraped from eBay.
         '''
         # Setup parameters for API call
         oauth_token = self._get_authentication_token()
@@ -62,9 +63,9 @@ class Scraper:
         }
         params['filter'] = 'searchInDescription:true' if deepSearch == True else 'searchInDescription:false'
         # Setup Environment
-        if self.environment == SANDBOX:
+        if self.environment == 'SANDBOX':
             apiUrl = 'https://api.sandbox.ebay.com/buy/browse/v1/item_summary/search'
-        elif self.environment == PRODUCTION:
+        elif self.environment == 'PRODUCTION':
             apiUrl = 'https://api.ebay.com/buy/browse/v1/item_summary/search'
         else:
             raise ValueError("environment parameter must either 'SANDBOX' or 'PRODUCTION'.")
@@ -79,7 +80,7 @@ class Scraper:
                 try:
                     itemDescription = self._extract_item_description(item_data["itemWebUrl"])
                     item_data["itemDescription"] = itemDescription
-                    yield item_data # Makes dataset builder faster!
+                    yield item_data # Makes iterative data scraping faster!
                 except Exception as e:
                     print(e)
         else:
@@ -100,9 +101,9 @@ class Scraper:
         returned from the search_and_scrape() method. This has to be done because eBay's \n
         search API doesn't return these descriptions.
 
-        Args:
+        ### Args:
             - url: String to the web address of the posted item.
-        Returns:
+        ### Returns:
             - The items description parsed from HTML.
         '''
         options = Options() 

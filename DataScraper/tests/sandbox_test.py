@@ -24,9 +24,9 @@ if __name__ == '__main__':
         # Call the data scraper and run as a generator
         datascraper = Scraper(environment='SANDBOX', keyset='DataScraper', keysetConfigPath=keysetConfigPath)
         for i, keyword in enumerate(keywords):
-            keyword = keyword.lower().replace('\n', '')
+            keyword = keyword.lower().replace('\n', '') # Normalize keywords
             print(f"Scraping items related to '{keyword}'... {len(keywords)-i} keywords left.")
-            # Use search_and_scrape() as a generator, aka itereator, that scrapes up to 200 items per key word.
+            # Use search_and_scrape() as a generator, aka itereator, that scrapes up to 200 items per key-word.
             for data_dump in datascraper.search_and_scrape(keyword, limit='200'): 
                 data_dump['keyword'] = keyword # May be important later.
                 with open(f"{output_dir}/data_{keyword}.json", 'a') as outfile:
