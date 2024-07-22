@@ -11,7 +11,7 @@ class Setbuilder:
     def __init__(self, data_dir: str) -> None:
         self.data_dir = data_dir
 
-    def combine(self, fields: Union[list[str], None] = None) -> list[dict]:
+    def combine(self, fields: Union['list[str]', None] = None) -> 'list[dict]':
         ''' `Combine` all item data files into one json file by 
         iterating through a `directory` of `JSON files`, filtering specified `fields`, 
         and concatenating them.
