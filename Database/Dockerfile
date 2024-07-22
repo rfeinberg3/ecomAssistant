@@ -11,6 +11,7 @@ RUN pip install -r requirements.txt
 # Copy in source code and library
 COPY /setbuilder /app/setbuilder
 COPY /tests/test_build.py /app/test_build.py
+#COPY /bin/connect.py /app/connect.py
 
 # Create directory to retrieve volume dataset
 RUN mkdir /volume && \

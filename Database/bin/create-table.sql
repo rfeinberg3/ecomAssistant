@@ -3,5 +3,6 @@ CREATE TABLE eAS (
     title varchar(160),
     price double precision,
     condition varchar(40),
-    itemDescription varchar(3000)
+    itemDescription varchar(10000),
+    UNIQUE (itemID)
 );
