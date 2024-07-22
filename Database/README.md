@@ -1,5 +1,18 @@
 # Database
 
+## Setup
+
+### Install External Libraries
+- Using conda:
+```bash
+conda create --file requirements.txt --name scraper
+conda activate scraper
+```
+- Using pip:
+```bash
+pip install -r requirements.txt
+```
+
 ## Usage
 To run in docker environment, assuming the volume has been created and DataScraper container has run for a reasonable amount of time. (Quick run all containers with the global `compose.yaml` file to obtain the volume. See main README for how to do that.)
 

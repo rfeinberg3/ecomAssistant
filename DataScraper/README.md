@@ -12,13 +12,16 @@ conda activate scraper
 ```bash
 pip install -r requirements.txt
 ```
+
+## Usage
+
+### Run
 - Using Docker:
 ```bash
 docker build -t eas:scraper .
-docker run eas:scraper
+docker run -v ebayautoseller_vol-input-data:/app/volume eas:scraper
 ```
 
-## Usage
 - Open a script in the [src](https://github.com/rfeinberg3/eBayAutoSeller/tree/main/DataScraper/src) directory and start with the imports below to get started. 
 ```
 import json
