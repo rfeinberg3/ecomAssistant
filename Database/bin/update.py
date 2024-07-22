@@ -11,7 +11,7 @@ if __name__ == '__main__':
     os.path.join('volume/outputs')
     data_dir = 'volume/outputs'
 
-    # Build dataset
+    # Build dataset from raw scraped item data
     list_of_dicts = Setbuilder(data_dir).combine(['itemId', 'title', 'price', 'condition', 'itemDescription'])
 
     # Connect to postgreSQL database
@@ -20,7 +20,7 @@ if __name__ == '__main__':
     # Open a cursor to perform database operations
     cur = conn.cursor()
 
-    # Send dataframe data to postgreSQL database
+    # Send data to postgreSQL database (update)
     for query in list_of_dicts:
         itemID = query['itemId']
         title = query['title']

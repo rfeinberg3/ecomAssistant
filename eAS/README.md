@@ -23,7 +23,7 @@ docker run -it user:colbert
   - This takes some time load initially (~1-2 minutes). Once loaded though answering queries is extremely quick!
 - Or follow the `Testing` section below to test with conda.
 -->
-## Testing
+## Testing Setup
 - Creating a conda environment:
 ```sh
 cd ColBERT

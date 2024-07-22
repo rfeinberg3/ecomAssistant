@@ -13,11 +13,12 @@ async function handleSubmit(event) {
 
     event.preventDefault(); // Prevent the form from submitting normally
 
-    input = document.getElementById('input').innerHTML;
+    // Get input from form
+    const input = document.getElementById('userInput').value;
 
     // Get data from backend
     const eASObject = await getData(url, input);
-    updateOutput(eASObject.topk);
+    updateOutput(eASObject);
 }
 
 // Fetch data from backend
@@ -30,14 +31,17 @@ async function getData(url, input) {
   :return: JSON eAS object from search on input
   :rtype: JSON object
   */
-  let response = await fetch(`${url}/${model}?query=${encodeURIComponent(input)}&k=${0}`);
+  let k = 3;
+  let response = await fetch(`${url}?query=${encodeURIComponent(input)}&k=${k}`);
   return response.json();
 }
 
 // Update output field
-function updateOutput(topDescriptions) {
-    const output = `Output: ${topDescriptions}`;
-    document.getElementById("output").innerHTML = output;
+function updateOutput(eASObject) {
+    // Set price field
+    document.getElementById("price").innerHTML = `${"$"}${eASObject.price.toFixed(2)}`;
+    // Set description field
+    document.getElementById("description").innerHTML = eASObject.itemDescription;
 }
 
 // Call main when the page loads

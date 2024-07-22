@@ -1,5 +1,7 @@
 import os, sys
-sys.path.append('..')
+os.path.join('../ColBERT')
+sys.path.insert(0, '..')
+
 
 from ColBERT import colbert
 from ColBERT.colbert import Searcher
@@ -12,7 +14,7 @@ if __name__ == "__main__":
     index_name = "collection.kmeans_4iters.2bits"
 
     # Get dataset points and factor for Search
-    dataset = DataCollator('volume/sets/dataset.json')
+    dataset = DataCollator('./dataset.json')
     title = dataset.get_queries()
     prices = dataset.get_price()
     collection = dataset.get_collection()

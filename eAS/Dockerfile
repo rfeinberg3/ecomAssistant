@@ -19,7 +19,7 @@ EXPOSE 5050:5050
 # Run python scripts
 COPY /datacollator /app/datacollator
 COPY /tests /app
-COPY /experiments /app/experiments
+#COPY /experiments /app/experiments
 
 ENTRYPOINT ["python", "retrieval_test.py"]
 

@@ -1,4 +1,6 @@
 #!/bin/bash
-docker compose up --build --detach
-docker attach ebayautoseller-retrieval-1
-docker compose down
+cd eAS
+docker build -t eas:v1 .
+docker run -it eas:v1
+docker stop eas:v1
+docker rm eas:v1
