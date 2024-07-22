@@ -5,7 +5,7 @@
 ### Install External Libraries
 - Using conda:
 ```bash
-conda env create --file requirements.txt --name scraper
+conda create --file requirements.txt --name scraper
 conda activate scraper
 ```
 - Using pip:

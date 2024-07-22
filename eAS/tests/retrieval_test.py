@@ -17,8 +17,6 @@ if __name__ == "__main__":
     prices = dataset.get_price()
     collection = dataset.get_collection()
 
-    print(len(prices))
-
     # To create the searcher using its relative name (i.e., not a full path), set
     # experiment=value_used_for_indexing in the RunConfig.
     with Run().context(RunConfig()):

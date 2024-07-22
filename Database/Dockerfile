@@ -10,7 +10,6 @@ RUN pip install -r requirements.txt
 
 # Copy in source code and library
 COPY /setbuilder /app/setbuilder
-#COPY /tests/test_build.py /app/test_build.py
 COPY /bin/update.py /app/update.py
 
 # Create directory to retrieve volume dataset
