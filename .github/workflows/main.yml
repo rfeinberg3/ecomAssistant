@@ -1,4 +1,4 @@
-name: Run Bash Script on Push
+name: Run Docker Compose File on Push
 
 on: [push]
 
@@ -6,14 +6,11 @@ jobs:
   run-bash-script:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
-
-      - name: Build and run Docker Compose
-        run: |
-          docker compose up --build --detach
-          docker attach ebayautoseller-retrieval-1
-          docker compose down
+    # need checkout before using docker-compose-action
+    - uses: actions/checkout@v3
+    - uses: adambirds/docker-compose-action@v1.3.0
+      with:
+        compose-file: "./compose.yaml"
+        up-flags: "--build"
+        services: |
+          retrieval
