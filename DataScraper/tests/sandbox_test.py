@@ -23,7 +23,7 @@ if __name__ == '__main__':
 
         # Call the data scraper and run as a generator
         datascraper = Scraper(environment='SANDBOX', keyset='DataScraper', keysetConfigPath=keysetConfigPath)
-        for keyword, i in enumerate(keywords):
+        for i, keyword in enumerate(keywords):
             keyword = keyword.lower().replace('\n', '')
             print(f"Scraping items related to '{keyword}'... {len(keywords)-i} keywords left.")
             # Use search_and_scrape() as a generator, aka itereator, that scrapes up to 200 items per key word.

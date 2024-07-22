@@ -12,10 +12,12 @@ if __name__ == "__main__":
     index_name = "collection.kmeans_4iters.2bits"
 
     # Get dataset points and factor for Search
-    dataset = DataCollator('./data/dataset.json')
+    dataset = DataCollator('volume/sets/dataset.json')
     title = dataset.get_queries()
     prices = dataset.get_price()
     collection = dataset.get_collection()
+
+    print(len(prices))
 
     # To create the searcher using its relative name (i.e., not a full path), set
     # experiment=value_used_for_indexing in the RunConfig.
@@ -39,6 +41,6 @@ if __name__ == "__main__":
         # Get average price from top 3 results
         print("\n----------------------------------------")
         print("Similar Item --> ", title[results[0][0]], sep='')
-        print("Recommended Price --> ", (float(prices[results[0][0]])+float(prices[results[0][1]])+float(prices[results[0][2]])/3), sep='')
+        print("Recommended Price --> ", (float(prices[results[0][0]][0])+float(prices[results[0][1]][0])+float(prices[results[0][2]][0])/3), sep='')
         print("Item Description: ", f"'{collection[results[0][0]]}'", sep='\n')
         print("----------------------------------------\n")

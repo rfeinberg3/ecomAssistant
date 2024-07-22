@@ -8,8 +8,8 @@ from setbuilder import Setbuilder
 
 if __name__ == '__main__':
     # Input dir
-    os.path.join('../../DataScraper/outputs')
-    data_dir = '../../DataScraper/outputs'
+    os.path.join('volume/outputs')
+    data_dir = 'volume/outputs'
 
     # Build dataset
     list_of_dicts = Setbuilder(data_dir).combine(['itemId', 'title', 'price', 'condition', 'itemDescription'])
