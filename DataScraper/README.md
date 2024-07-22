@@ -1,6 +1,6 @@
 # eBay Item Data Scraper
 
-## Setup
+## Testing Setup
 
 ### Install External Libraries
 - Using conda:

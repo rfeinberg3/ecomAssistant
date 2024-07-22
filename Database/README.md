@@ -1,6 +1,6 @@
 # Database
 
-## Setup
+## Testing Setup
 
 ### Install External Libraries
 - Using conda:
