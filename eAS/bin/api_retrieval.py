@@ -48,22 +48,7 @@ def api_search_query(query, k):
     topk['itemDescription'] = collection[results[0][0]]
     topk['price'] = (float(prices[results[0][0]][0])+float(prices[results[0][1]][0])+float(prices[results[0][2]][0])/3)
     return topk
-'''
-    if k == None: k = 10
-    k = min(int(k), 100)
-    pids, ranks, scores = searcher.search(query, k=100)
-    pids, ranks, scores = pids[:k], ranks[:k], scores[:k]
-    passages = [searcher.collection[pid] for pid in pids]
-    probs = [math.exp(score) for score in scores]
-    probs = [prob / sum(probs) for prob in probs]
-    topk = []
-    for pid, rank, score, prob in zip(pids, ranks, scores, probs):
-        text = searcher.collection[pid]            
-        d = {'text': text, 'pid': pid, 'rank': rank, 'score': score, 'prob': prob}
-        topk.append(d)
-    topk = list(sorted(topk, key=lambda p: (-1 * p['score'], p['pid'])))
-    return {"query" : query, "topk": topk}
-'''
+
 
 # API Call Function
 @app.route("/api/search", methods=["GET"])
