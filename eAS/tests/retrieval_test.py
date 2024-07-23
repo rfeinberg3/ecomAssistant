@@ -1,3 +1,8 @@
+'''
+!!! 
+Move the `bin/experiments` directory with all of its contents this `tests` directory with all of its contents to run tests with this script in conda environment.
+!!!
+'''
 import os, sys
 os.path.join('../ColBERT')
 sys.path.insert(0, '..')
