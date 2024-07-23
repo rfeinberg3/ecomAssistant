@@ -6,7 +6,7 @@ from setbuilder import Setbuilder
 
 
 if __name__ == '__main__':
-    # Input dir
+    # Data Input dir from DastaScaper otuput
     os.path.join('volume/outputs')
     data_dir = 'volume/outputs'
 
@@ -14,7 +14,7 @@ if __name__ == '__main__':
     list_of_dicts = Setbuilder(data_dir).combine(['itemId', 'title', 'price', 'condition', 'itemDescription'])
 
     # Connect to postgreSQL database
-    conn = psycopg2.connect("dbname=rfeinberg user=ryan")
+    conn = psycopg2.connect("dbname=rfeinberg user=ryan password=test111")
 
     # Open a cursor to perform database operations
     cur = conn.cursor()

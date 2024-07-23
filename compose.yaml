@@ -19,14 +19,21 @@ services:
     volumes:
       - vol-input-data:/app/volume
 
-  # Define the database
-  database:
-    build: ./Database
-    depends_on:
-      - scraper
+  # Define the database: https://www.docker.com/blog/how-to-use-the-postgres-docker-official-image/ && https://www.linkedin.com/pulse/configuring-connecting-postgresql-database-docker-dqeze/
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_PASSWORD: test111
     volumes:
-      - vol-input-data:/app/volume
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+  #database:
+  #  build: ./Database
+   # volumes:
+   #   - vol-input-data:/app/volume
 
 # Define the shared volume  
 volumes:
   vol-input-data: 
+  pgdata:

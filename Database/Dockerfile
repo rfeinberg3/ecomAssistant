@@ -2,6 +2,9 @@
 
 FROM python:3.9
 
+# Install PostgreSQL client
+RUN apt-get update && apt-get install -y postgresql-client
+
 WORKDIR /app
 
 # Install dependencies
@@ -18,4 +21,11 @@ RUN mkdir /volume && \
     mkdir /sets && \
     cd /..
 
-CMD ["python", "update.py"]
+# Set environment variables for database connection
+ENV POSTGRES_HOST=db
+ENV POSTGRES_PORT=5431
+ENV POSTGRES_DB=eas
+ENV POSTGRES_USER=ryan1
+#ENV POSTGRES_PASSWORD=
+
+CMD ["sh", "-c", "while ! pg_isready -h $POSTGRES_HOST -p $POSTGRES_PORT; do sleep 1; done && python update.py"]

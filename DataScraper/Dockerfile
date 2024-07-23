@@ -32,4 +32,4 @@ RUN mkdir /volume && \
 # Copy in keywords list(s) to scrape
 COPY /keywords /app/keywords
 
-CMD ["python3", "sandbox_test.py"]
+#CMD ["python3", "sandbox_test.py"]
