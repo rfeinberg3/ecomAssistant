@@ -1,7 +1,7 @@
-import os, sys
-sys.path.append('..')
+#import os, sys
+#sys.path.append('..')
 
-from flask import Flask, render_template, request
+from flask import Flask, request
 from flask_cors import CORS
 from functools import lru_cache
 import math
@@ -14,9 +14,7 @@ from datacollator import DataCollator
 index_name = "collection.kmeans_4iters.2bits"
 
 # Get dataset points and factor for Search
-##dataset = DataCollator('volume/sets/dataset.json')
-os.path.join('../tests')
-dataset = DataCollator('../tests/dataset.json')
+dataset = DataCollator('volume/sets/dataset.json')
 title = dataset.get_queries()
 prices = dataset.get_price()
 collection = dataset.get_collection()
@@ -42,7 +40,6 @@ def api_search_query(query, k):
     print(f"Query={query}")
      # Find the top-3 passages for this query
     results = searcher.search(query, k=int(k))
-
     # Get average price from top 3 results
     topk = dict()
     topk['itemDescription'] = collection[results[0][0]]

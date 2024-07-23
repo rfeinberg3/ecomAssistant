@@ -18,4 +18,4 @@ RUN mkdir /volume && \
     mkdir /sets && \
     cd /..
 
-ENTRYPOINT ["python", "update.py"]
+CMD ["python", "update.py"]

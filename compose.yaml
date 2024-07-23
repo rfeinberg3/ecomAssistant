@@ -3,15 +3,15 @@ services:
   retrieval:
     # Build the Dockerfile that's in the RAG directory
     build: ./eAS
-    # Load the dataset into the volume before building the retrieval service
-    depends_on:
-      - database
     # Define the directory in the service that connects to the shared volume 
     volumes:
       - vol-input-data:/app/volume
-    # keep standard input open and assign a terminal for user queries
-    stdin_open: true
-    tty: true
+    # Expose necessary ports for API server
+    ports:
+      - '5050:5050'
+    ##keep standard input open and assign a terminal for user queries (For Testing)
+    #stdin_open: true
+    #tty: true
   
   # Define datascraper
   scraper:
