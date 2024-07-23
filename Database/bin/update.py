@@ -1,7 +1,6 @@
 import os, sys
 sys.path.append('../setbuilder')
 
-import pandas as pd
 import psycopg2
 from setbuilder import Setbuilder
 
