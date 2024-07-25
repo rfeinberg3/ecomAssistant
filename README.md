@@ -126,6 +126,10 @@ Instructions for simple local setup and run are given below. If you would like t
 
 ### Prerequisites
 - Download Docker Desktop [here](https://www.docker.com/products/docker-desktop/).
+- Install node http server globally for local hosting:
+```sh
+npm install http-server -g
+```
 
 ### Installation
 - Create a directory for this program, and clone this repo into it:
@@ -140,19 +144,19 @@ cd ecomAssistant
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-### Main Program
-- Use the provided shell script for super simple start-up.
+### Backend Retrieval API Server
+- !! ^^^ BROKEN. Needs communication between database to be setup before can function ^^^ !!
+- Initialize the API retrieval server (locally hosted on your machine):
 ```sh
-sh run.sh
-```
-- Or run the commands yourself to initialize containers in the background and attach to the main app container.
-```sh
-docker compose up --build --detach
-docker attach ebayautoseller-retrieval-1
-docker compose down
+docker compose up --detach
 ```
 
-### ecom DataScraping
+### Frontend HTTP Server
+
+
+
+
+## ecom DataScraping
 _For details on how a more diverse dataset could be created with datascraping, please refer to my [datascraper repo](https://github.com/rfeinberg3/datascraper). Setup is super easy!_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

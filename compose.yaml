@@ -12,12 +12,6 @@ services:
     ##keep standard input open and assign a terminal for user queries (For Testing)
     #stdin_open: true
     #tty: true
-  
-  # Define datascraper
-  scraper:
-    build: ./DataScraper
-    volumes:
-      - vol-input-data:/app/volume
 
   # Define the database: https://www.docker.com/blog/how-to-use-the-postgres-docker-official-image/ && https://www.linkedin.com/pulse/configuring-connecting-postgresql-database-docker-dqeze/
   db:
