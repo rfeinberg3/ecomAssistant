@@ -7,6 +7,7 @@
 ## Listing Assistant 
 - Create dataset in memory by pulling data from item table in Docker postgres database.
 - Index embedding need to be created before Search API will work. Use same exact data from item table (in colab indexing notebook).
+- !! See if models can be loaded in memory (ColBERT with HuggingFace).
 
 ## Key Aspects
 - **Retrieval-Augmented Generation (RAG)**: Fast and size efficient document retrieval.
