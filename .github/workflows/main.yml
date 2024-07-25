@@ -3,7 +3,7 @@ name: Run Docker Compose File on Push
 on: [push]
 
 jobs:
-  run-bash-script:
+  run-compose:
     runs-on: ubuntu-latest
     steps:
     # need checkout before using docker-compose-action
@@ -14,3 +14,4 @@ jobs:
         up-flags: "--build"
         services: |
           retrieval
+          db
