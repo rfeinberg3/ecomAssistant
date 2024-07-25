@@ -5,8 +5,8 @@
 ### Install External Libraries
 - Using conda:
 ```bash
-conda create --file requirements.txt --name scraper
-conda activate scraper
+conda create --file requirements.txt --name db
+conda activate db
 ```
 - Using pip:
 ```bash
