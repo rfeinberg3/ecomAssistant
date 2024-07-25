@@ -1,4 +1,4 @@
-# Database
+# Docker Postgres Database
 
 ## Fashion/Clothing Table
 - SKU: Item ID

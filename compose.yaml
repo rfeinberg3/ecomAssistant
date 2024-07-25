@@ -28,10 +28,6 @@ services:
       - pgdata:/var/lib/postgresql/data
     ports:
       - '127.0.0.1:5431:5432'
-  #database:
-  #  build: ./Database
-   # volumes:
-   #   - vol-input-data:/app/volume
 
 # Define the shared volume  
 volumes:
