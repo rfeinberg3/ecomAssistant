@@ -88,7 +88,7 @@ I was unable to find ecommerce item datasets with diverse listing large enough f
 ### Method
 
 1. **Developing the Knowledge Base**: 
-  - Data Collection: Knowledge base developed with eBay data scraper scripts. (See the `DataScraper` directory for details.)
+  - Data Collection: Knowledge base developed with open-source ecommerce datasets, namely `TrainingDataPro/asos-e-commerce-dataset`. 
   - Data Organization: Organized the knowledge base into a collection of documents (strings) for ColBERT’s Indexer. (See the `RAG` directory containing the `DataCollator` class for details.)
   - Data Indexing: Used ColBERT’s Indexer to process and index the collection, making it searchable. 
     - This was done on Google Colab as GPU support is needed for indexing. See the `ColBERT_eAS_Indexing.ipynb` notebook for specifics on the indexing process.
