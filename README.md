@@ -167,24 +167,29 @@ Loading the program takes around 1 minute. Once loaded query retrieval is almost
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Build a Knowledge base using eBay's RESTful API calls to scrape item data based on keywords.
-  - [x] Use Selenium Chrome Drivers to extract item descriptions buried in html and js.
-- [x] Research and test retrieval model to integrate into this program.
-- [x] Create a dataset builder to format data to ColBERT for indexing and retrieval.
-    - [x] Index on colab.
-    - [x] Create CPU functional retrieval script.
-- [x] Create Dockerfiles for each microservice.
-- [x] Orchestrate containers with docker compose and shell scripts (deploy ready).
+- [x] Build a Knowledge base of item data.
+  - [x] Use Selenium Chrome Drivers to extract item descriptions buried in html.
+  - [x] Research and integrate useful ecommerce item data dataset.
+- [x] Indexing and Search Scripts (Retrieval part of RAG).
+  - [x] Research and test retrieval model to integrate into this program.
+  - [x] Index on colab (GPU support needed).
+  - [x] Create CPU functional Search script.
+  - [ ] Use HuggingFace ColBERT repo create in memory model calls.
+- [x] Create microservices with Docker.
+  - [x] Orchestrate containers with docker compose.
+- [x] Full Stack Paradigm.
+  - [x] Write frontend with HTML, CSS, and JavaScript.
+  - [x] Refactor retrieval in to API server with Flask.
+  - [x] Setup networking to allow frontend to make API calls to backend (locally for now)
+- [x] Setup Mock Frontend (Firebase hosting)
+- [ ] Convert the `Dataset` directory into a dedicated Database (PostgreSQL)
+  - [ ] Connect db to retrieval app to create in memory dataset for Search. 
+  - [x] Containerize psql db
+  - [x] Add real ecommerce dataset to db
+- [ ] Research, test, and integrate a generative model to use with this program for item description generation.
+  - [ ] T5 generative text script 
 - [ ] Refactor all code into classes with abstracts where applicable
 - [ ] Add Typing to all classes.
-- [x] Refactor main README.
-- [ ] Full Stack Paradigm.
-  - [ ] Write frontend with HTML, CSS, and JavaScript (and React potentially) and push to cloud server.
-  - [ ] Refactor this repo into a dedicated backend with Flask API calls, Gunicorn, and a cloud provider.
-  - [ ] Convert the `Dataset` directory into a dedicated Database (PostgreSQL). 
-- [ ] Integrate feature to scrape custom item data from eBay, given a user's keyword query.
-  - [ ] Dynamically update the database when this is used.
-- [ ] Research, test, and integrate a generative model to use with this program for item description generation.
 
 
 See the [open issues](https://github.com/rfeinberg3/eBayAutoSeller/issues) for a full list of proposed features (and known issues).

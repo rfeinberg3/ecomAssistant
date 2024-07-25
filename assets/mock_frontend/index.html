@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eBay Auto Seller (eAS)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        h2 {
+            color: #444;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #output {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>eBay Auto Seller (eAS)</h1>
+    
+    <form id="eASForm">
+        <label for="itemSelect">Select an item:</label>
+        <select id="itemSelect" required>
+            <option value="">-- Select an item --</option>
+            <option value="smartphone">Smartphone</option>
+            <option value="laptop">Laptop</option>
+            <option value="headphones">Headphones</option>
+            <option value="camera">Digital Camera</option>
+            <option value="watch">Smart Watch</option>
+            <option value="tablet">Tablet</option>
+            <option value="console">Gaming Console</option>
+            <option value="tv">4K TV</option>
+            <option value="printer">Wireless Printer</option>
+            <option value="speaker">Bluetooth Speaker</option>
+        </select>
+        <button type="submit">Generate Item Pricing and Description</button>
+    </form>
+
+    <div id="output">
+        <h2>Recommended Price</h2>
+        <p id="price">$0.00</p>
+
+        <h2>Recommended Description</h2>
+        <p id="description"></p>
+    </div>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            const selectedItem = document.getElementById('itemSelect').value;
+            updateOutput(selectedItem);
+        }
+
+        function updateOutput(item) {
+            let price, description;
+
+            if (item === "smartphone") {
+                price = 599.99;
+                description = "Latest model smartphone with high-resolution camera and long battery life.";
+            } else if (item === "laptop") {
+                price = 899.99;
+                description = "Powerful laptop with fast processor, ample storage, and crisp display.";
+            } else if (item === "headphones") {
+                price = 149.99;
+                description = "Noise-cancelling wireless headphones with premium sound quality.";
+            } else if (item === "camera") {
+                price = 449.99;
+                description = "High-resolution digital camera with multiple shooting modes and 4K video capability.";
+            } else if (item === "watch") {
+                price = 249.99;
+                description = "Smart watch with fitness tracking, heart rate monitor, and smartphone notifications.";
+            } else if (item === "tablet") {
+                price = 329.99;
+                description = "Lightweight tablet with retina display, perfect for entertainment and productivity.";
+            } else if (item === "console") {
+                price = 499.99;
+                description = "Next-gen gaming console with 4K graphics and a vast library of games.";
+            } else if (item === "tv") {
+                price = 799.99;
+                description = "55-inch 4K Smart TV with HDR and built-in streaming apps.";
+            } else if (item === "printer") {
+                price = 129.99;
+                description = "All-in-one wireless printer with scanning and copying capabilities.";
+            } else if (item === "speaker") {
+                price = 79.99;
+                description = "Portable Bluetooth speaker with rich sound and long battery life.";
+            } else {
+                price = 0.00;
+                description = "Please select an item to see pricing and description.";
+            }
+
+            document.getElementById("price").innerHTML = `$${price.toFixed(2)}`;
+            document.getElementById("description").innerHTML = description;
+        }
+
+        // Add event listener for form submission
+        document.getElementById('eASForm').addEventListener('submit', handleSubmit);
+    </script>
+</body>
+</html>
