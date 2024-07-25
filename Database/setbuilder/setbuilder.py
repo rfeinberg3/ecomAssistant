@@ -1,7 +1,7 @@
 import os
 import json
 import re
-from typing import Union
+from typing import Union, TypeVar
 
 class Setbuilder:
     ''' 
