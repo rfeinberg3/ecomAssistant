@@ -31,7 +31,7 @@
     <a href="https://github.com/rfeinberg3/eBayAutoSeller/tree/main/documentation"><strong>Explore the docs »</strong></a>
     <br>
     <br>
-    <a href="#demo">View Demo</a>
+    <a href="https://mock-ecomassistant.web.app">View Demo</a>
     ·
     <a href="https://github.com/rfeinberg3/eBay_Auto_Seller/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
@@ -66,7 +66,6 @@
         <li><a href="#main-program">Main Program</a></li>
         <li><a href="#ebay-datascraping">eBay DataScraping</a></li>
       </ul>
-    <li><a href="#demo">Demo</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -157,11 +156,6 @@ docker compose down
 _For details on how the dataset for retrieval was created, or how to recreate it for yourself, please refer to the [DataScraper Directory](https://github.com/rfeinberg3/eBayAutoSeller/tree/main/DataScraper). Setup is super easy!_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## Demo
-Loading the program takes around 1 minute. Once loaded query retrieval is almost instant! Control + C to exit the program. (This destroys all the containers.)
-
-![Demo Video](assets/demos/demo.gif)
 
 
 <!-- ROADMAP -->
