@@ -4,6 +4,17 @@
 - I want db service to be fully containerized to facilitate operation on any system.
 - Docker compose + volume support can allow for in memory data usage by RAG model. i.e no need to save dataset as a file.
 
+### Access pg db container from local machine
+- Run `docker compose up db` 
+- In a seperate terminal, create `eAssistant` db:
+```sh
+docker exec -it ebayautoseller-db-1 createdb -U postgres eAssistant
+```
+- Connect in a seperate terminal using postgres uri:
+```sh
+psql postgresql://postgres:1234@localhost:5431/eAssistant
+```
+
 ## Listing Assistant 
 - Create dataset in memory by pulling data from item table in Docker postgres database.
 - Index embedding need to be created before Search API will work. Use same exact data from item table (in colab indexing notebook).

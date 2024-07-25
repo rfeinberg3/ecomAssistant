@@ -23,11 +23,11 @@ services:
   db:
     image: postgres:15
     environment:
-      POSTGRES_PASSWORD: test111
+      POSTGRES_PASSWORD: 1234
     volumes:
       - pgdata:/var/lib/postgresql/data
     ports:
-      - '5432:5432'
+      - '127.0.0.1:5431:5432'
   #database:
   #  build: ./Database
    # volumes:
