@@ -10,7 +10,6 @@
 - Run the server with Node.js http-server module:
 ```bash
 npm install http-server -g
-cd /Frontend
 npx http-server --cors --port 8080
 ```
 - The port must match the exposed port from the API backend.
