@@ -2,7 +2,7 @@ services:
   # Define the application
   retrieval:
     # Build the Dockerfile that's in the RAG directory
-    build: ./eAS
+    build: ./ecomAssistant
     # Define the directory in the service that connects to the shared volume 
     volumes:
       - vol-input-data:/app/volume
