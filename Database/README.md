@@ -1,5 +1,11 @@
 # Database
 
+## Fashion/Clothing Table
+- SKU: Item ID
+- Name: Title of item
+- Price: USD
+- Description: Description of item
+
 ## Testing Setup
 
 ### Install External Libraries
@@ -34,6 +40,7 @@ eAssistant=#
 ```
 - Copy and paste the contents of `./bin/create-tables.sql` into the command-line to initialize the table.
 - Now run `./bin/asos_data_to_db.py` to add the Fashion dataset to the db.
+    - Note how variables are setup in the compose db service and the psycopg2.connect() method within `asos_data_to_db.py` respectively. It's crucial they are both setup this way to work properly.
 
 
 ## Developer Note:
