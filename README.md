@@ -228,7 +228,6 @@ Ryan Feinberg - [LinkedIn](https://www.linkedin.com/in/rfeinberg3/) - rfeinberg3
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-- [eBay Developer Program](https://developer.ebay.com/develop/get-started)
 - [Deploying Microservices with Docker](https://www.linode.com/docs/guides/deploying-microservices-with-docker/)
 - [2023 Nvidia, "What is Retrieval-Augmented Generation, aka RAG?"](https://blogs.nvidia.com/blog/what-is-retrieval-augmented-generation/)
 - [ColBERT on GitHub](https://github.com/stanford-futuredata/ColBERT?tab=readme-ov-file)
