@@ -1,13 +1,12 @@
 # Project Overview
 
-## Next Steps 
-- Create API end-points for `DataScraper` for extended search and scrape:
-    - POST: (keyword(s), limit, offset)
-    - GET: JSON item data
-- Create API end-points for `Database` to add scraped items (at any time):
-    - POST: Queries for item data
-    - GET: Item data
-- Create API end-points for `RAG` to request Search.
+## Postgres db in Docker container
+- I want db service to be fully containerized to facilitate operation on any system.
+- Docker compose + volume support can allow for in memory data usage by RAG model. i.e no need to save dataset as a file.
+
+## Listing Assistant 
+- Create dataset in memory by pulling data from item table in Docker postgres database.
+- Index embedding need to be created before Search API will work. Use same exact data from item table (in colab indexing notebook).
 
 ## Key Aspects
 - **Retrieval-Augmented Generation (RAG)**: Fast and size efficient document retrieval.

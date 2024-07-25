@@ -21,7 +21,7 @@ services:
 
   # Define the database: https://www.docker.com/blog/how-to-use-the-postgres-docker-official-image/ && https://www.linkedin.com/pulse/configuring-connecting-postgresql-database-docker-dqeze/
   db:
-    image: postgres:16
+    image: postgres:15
     environment:
       POSTGRES_PASSWORD: test111
     volumes:
