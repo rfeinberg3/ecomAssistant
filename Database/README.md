@@ -1,6 +1,7 @@
 # Docker Postgres Database
 
 ## Fashion/Clothing Table
+[Link to dataset](https://huggingface.co/datasets/TrainingDataPro/asos-e-commerce-dataset)
 - SKU: Item ID
 - Name: Title of item
 - Price: USD
