@@ -108,12 +108,12 @@ I was unable to find ecommerce item datasets with diverse listing large enough f
 ### Built With
 
 - [![Python][python-badge]][python-url]
-- [![Selenium Chrome Drivers][selenium-badge]][selenium-url]
 - [![Docker][docker-badge]][docker-url]
 - [![Flask][flask-badge]][flask-url]
 - [![Pandas][pandas-badge]][pandas-url]
 - [![JSON][json-badge]][json-url]
 - [![Google Colab][colab-badge]][colab-url]
+- [![Selenium Chrome Drivers][selenium-badge]][selenium-url]
 - [![Linux][linux-badge]][linux-url]
 
 
