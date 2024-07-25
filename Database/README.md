@@ -2,10 +2,12 @@
 
 ## Fashion/Clothing Table
 [Link to dataset](https://huggingface.co/datasets/TrainingDataPro/asos-e-commerce-dataset)
-- SKU: Item ID
-- Name: Title of item
-- Price: USD
-- Description: Description of item
+- Size: 56.3 MB
+- Important columns:
+    - SKU: Item ID
+    - Name: Title of item
+    - Price: USD
+    - Description: Description of item
 
 ## Testing Setup
 
