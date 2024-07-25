@@ -152,8 +152,11 @@ docker compose up --detach
 ```
 
 ### Frontend HTTP Server
-
-
+- Run the server with Node.js http-server module:
+```bash
+cd frontend
+npx http-server --cors --port 8080
+```
 
 
 ## ecom DataScraping
