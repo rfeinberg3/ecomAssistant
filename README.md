@@ -19,7 +19,7 @@
 <!-- PROJECT LOGO -->
 <br>
 <div align="center">
-  <a href="https://github.com/rfeinberg3/eBayAutoSeller">
+  <a href="https://github.com/rfeinberg3/ecomAssistant">
     <img src="assets/images/logo.jpg" alt="Logo" width="80" height="80">
   </a>
 
@@ -28,14 +28,14 @@
   <p align="center">
     eAs is a tool that generates aggregated item pricing and descriptions by simply inputing an item's name. It uses ColBERT for Retrieval-Augmented Generation, open-source ecommerce item data for knowledge base acquisition, and Docker for microservice orchestration.
     <br>
-    <a href="https://github.com/rfeinberg3/eBayAutoSeller/tree/main/documentation"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/rfeinberg3/ecomAssistant/tree/main/documentation"><strong>Explore the docs »</strong></a>
     <br>
     <br>
     <a href="https://mock-ecomassistant.web.app">View Demo</a>
     ·
-    <a href="https://github.com/rfeinberg3/eBay_Auto_Seller/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/rfeinberg3/ecomAssistant/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
-    <a href="https://github.com/rfeinberg3/eBay_Auto_Seller/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/rfeinberg3/ecomAssistant/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 
@@ -64,7 +64,7 @@
       <a href="#usage">Usage</a></li>
       <ul>
         <li><a href="#main-program">Main Program</a></li>
-        <li><a href="#ebay-datascraping">eBay DataScraping</a></li>
+        <li><a href="#ecom-datascraping">ecom DataScraping</a></li>
       </ul>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
@@ -130,8 +130,8 @@ Instructions for simple local setup and run are given below. If you would like t
 ### Installation
 - Create a directory for this program, and clone this repo into it:
 ```sh
-git clone https://github.com/rfeinberg3/eBayAutoSeller.git
-cd eBayAutoSeller
+git clone https://github.com/rfeinberg3/ecomAssistant.git
+cd ecomAssistant
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -152,7 +152,7 @@ docker attach ebayautoseller-retrieval-1
 docker compose down
 ```
 
-### DataScraping
+### ecom DataScraping
 _For details on how a more diverse dataset could be created with datascraping, please refer to my [datascraper repo](https://github.com/rfeinberg3/datascraper). Setup is super easy!_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -186,7 +186,7 @@ _For details on how a more diverse dataset could be created with datascraping, p
 - [ ] Add Typing to all classes.
 
 
-See the [open issues](https://github.com/rfeinberg3/eBayAutoSeller/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/rfeinberg3/ecomAssistant/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
