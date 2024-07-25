@@ -1,14 +1,5 @@
 # Docker Postgres Database
 
-## Fashion/Clothing Table
-[Link to dataset](https://huggingface.co/datasets/TrainingDataPro/asos-e-commerce-dataset)
-- Size: 56.3 MB
-- Important columns:
-    - SKU: Item ID
-    - Name: Title of item
-    - Price: USD
-    - Description: Description of item
-
 ## Testing Setup
 
 ### Install External Libraries
@@ -45,13 +36,14 @@ eAssistant=#
 - Now run `./bin/asos_data_to_db.py` to add the Fashion dataset to the db.
     - Note how variables are setup in the compose db service and the psycopg2.connect() method within `asos_data_to_db.py` respectively. It's crucial they are both setup this way to work properly.
 
+## Setbuilder
+- `./setbuilder/setbuilder.py`
+- The purpose of This object is to compress collected data from any directory containing json file(s) and extract only the necessary data.
+- Allows for ease of dataset collation/creation with its combine() method.
+- See `./tests/test_build.py` amd its output `./tests/varied_dataset.csv` for example.
+
 
 ## Developer Note:
 - More datasets to be added should go in seperate tables.
 - Should also be able to connect to eassistant to update dataset (would need to rerun indexing which needs GPU support).
 
-## Setbuilder
-- `./setbuilder/setbuilder.py`
-- The purpose of This object is to compress collected data from any directory containing json file(s) and extract only the necessary data.
-- Allows for ease of dataset collation/creation with its combine() method.
-- See `./tests/test_build.py` ad its output `./tests/varied_dataset.csv` for example.

@@ -1,70 +1,51 @@
-# Project Overview
+# Project Notes
 
-## Postgres db in Docker container
+## User Stories
+- As an e-commerce user looking to sell used items, I would like to list my items at a reasonable price, to attract potential buyers quickly.
+- As a developer (especially one new to this program's code) I would like to easily integrate this program with another e-commerce API, another RAG model, or a different database service.
+
+## Next Steps
+
+### Postgres db in Docker container
 - I want db service to be fully containerized to facilitate operation on any system.
 - Docker compose + volume support can allow for in memory data usage by RAG model. i.e no need to save dataset as a file.
 
-### Access pg db container from local machine
-- Run `docker compose up db` 
-- In a seperate terminal, create `eAssistant` db:
-```sh
-docker exec -it ebayautoseller-db-1 createdb -U postgres eAssistant
-```
-- Connect in a seperate terminal using postgres uri:
-```sh
-psql postgresql://postgres:1234@localhost:5431/eAssistant
-```
-
-## Listing Assistant 
+### ecomAssistant
 - Create dataset in memory by pulling data from item table in Docker postgres database.
 - Index embedding need to be created before Search API will work. Use same exact data from item table (in colab indexing notebook).
 - !! See if models can be loaded in memory (ColBERT with HuggingFace).
 
-## Key Aspects
-- **Retrieval-Augmented Generation (RAG)**: Fast and size efficient document retrieval.
-- **Microservice Architecture**: Using Docker-compose to orchestrate containerization.
-- **REST APIs**: Scalable and efficient API calls for knowledge base development.
+### Look into Generative Model Options for Generating Item Descriptions
+- [GPT-2 for text generation](https://huggingface.co/openai-community/gpt2/tree/main)
+- BERT for fill-in-mask generation or question-answer generation? The masked part could be the item descriptions!
+  - [BERT-base-uncased on Hugging Face](https://huggingface.co/google-bert/bert-base-uncased/tree/main)
+- Mistral for text generation
+  - [Mistral-7B-v0.1 on Hugging Face](https://huggingface.co/mistralai/Mistral-7B-v0.1?text=My+name+is+Julien+and+I+like+to)
+- Phi-3 mini for text generation
+  - [Phi-3 mini on Hugging Face](https://huggingface.co/microsoft/Phi-3-mini-4k-instruct?text=Give+a+seller+description+for+the+following+item+‘Apple+Watch’)
 
-## User Stories
-- As an e-commerce user looking to sell used items, I would like to list my items at a reasonable price, to attract potential buyers quickly.
-- As an AI developer I would like a tool that allows me to easily scrape useful data about items from e-commerce websites.
-- As a developer (especially one new to this program's code) I would like to easily integrate this program with another e-commerce API, another RAG model, or a different database service.
+## Notes on RAG
 
+### ColBERTv2
+- [ColBERT on GitHub](https://github.com/stanford-futuredata/ColBERT?tab=readme-ov-file)
+- [ColBERTv2.0 on Hugging Face](https://huggingface.co/colbert-ir/colbertv2.0)
+- This model is fast, lightweight, and can produce state-of-the-art results.
+  - Param count = 110M
+  - Uses PyTorch and Safetensors
+  - Model size is 438MB
+  - Trained on MS MARCO Passage Ranking
+- [ColBERT intro colab](https://colab.research.google.com/github/stanford-futuredata/ColBERT/blob/main/docs/intro2new.ipynb#scrollTo=JRiOnzxtwI0j)
 
-## Why Microservices?
-
-1.	**Scalability**: Microservices architecture allows different parts of the application to scale independently. For example, if the demand for image processing increases, only the image processing microservice needs to be scaled up, without affecting other parts of the application. This ensures efficient resource utilization and cost management.
-2.	**Flexibility**: Each microservice can be developed, deployed, and maintained independently. This modular approach means that different teams can work on different microservices simultaneously, leading to faster development cycles and easier integration of new features or updates.
-3.	**Resilience**: Microservices improve the resilience of the application. If one microservice fails, it does not bring down the entire system. Other microservices can continue to function, ensuring that the application remains available and operational, which is critical for maintaining user trust and satisfaction.
-
-
-## Why eBay?
-
-With numerous e-commerce websites available, why choose eBay? While it may not be everyone's favorite e-commerce platform, I believe eBay is the best choice for this application for several important reasons.
-
-1. **Open-Source API Support:** eBay is the most well-known e-commerce website that supports open-source RESTful API calls. Although more popular services like Facebook Marketplace and OfferUp exist, they don’t offer public APIs.
-
-2. **Extensive Developer Support:** eBay has extensive developer support, evident through consistent updates, maintenance, and community engagement events. This robust support ensures a reliable and up-to-date API service.
-
-3. **Vast and High-Quality Data:** eBay provides a vast quantity and quality of data, superior to other e-commerce sites like Etsy or Shopify. High-quality data is crucial for training a model to generate descriptions of everyday items people may wish to resell. Unlike Shopify and Etsy, which cater more to entrepreneurial startups, eBay's data is well-suited for this purpose.
-
-## Why RAG?
-1.	**Minimizes Hallucinations**: Retrieval-Augmented Generation (RAG) significantly reduces the problem of hallucinations in generated text. By leveraging a retrieval mechanism to pull in relevant documents or information before generating a response, RAG ensures that the generated descriptions are grounded in actual data. This is crucial for maintaining accuracy and trustworthiness in item descriptions.
-
-2.	**Enhanced Data Communication**: RAG allows models to essentially communicate with data repositories. This means that users can input queries or item images, and the model can fetch the most relevant information from a knowledge base or vector database before generating a coherent and contextually accurate description. This approach enhances the quality and relevance of the generated content.
-
-## Notes for ColBERT
-
-### Searching ColBERTv2
+#### Searching ColBERTv2
 - This will be the main mechanism for the RAG portion of this project, and involves finding relevant data within an indexed database given a user query.
 - Development of search on CPU is possible given a pre-indexed database, and will be developed before GPU search due to versatility of CPU-based programs. 
 
-### Indexing ColBERTv2
+#### Indexing ColBERTv2
 - Indexing requires a list of passage strings to be fed to the indexer.
 - The index file contained in the experiment folder can then be saved and used with the Searcher class at any point.
 - Indexing a dataset 
 
-### Training ColBERTv2
+#### Training ColBERTv2
 - ColBERTv2 is trained on the MS MARCO Passage Ranking dataset. 
 - Training requires a JSONL triples file with a [qid, pid+, pid-] list per line. The query IDs and passage IDs correspond to the specified queries.tsv and collection.tsv files respectively.
     - pid+: positive_passage_id
@@ -76,7 +57,19 @@ With numerous e-commerce websites available, why choose eBay? While it may not b
 	-	Positive Passage: A passage that correctly and relevantly answers the query.
 	-	Negative Passage: A passage that is either irrelevant or less relevant to the query compared to the positive passage.
 
-## Notes for Data Scraper
+### Other Models
+- Other open-source models for RAG architecture out there could be used as well.
+- One such example is Facebook's RAG-Token Model, a neat tokenizer-retriever-model pipeline. However, this pipeline would require lots of reconstruction to set up for our use case and doesn't have much supporting documentation (any really) to aid in this endeavor.
+- Constructing a pipeline from scratch with the RAGatouille library seems to be a much more efficient process, provided the large amount of resources present in their framework.
 
-### Selenium Docker Image
-- [Docker Selenium Standalone Chrome Image Documentation](https://hub.docker.com/r/selenium/standalone-chrome)
+## Notes on PostgreSQL Database
+
+### Fashion/Clothing Table
+[Link to dataset](https://huggingface.co/datasets/TrainingDataPro/asos-e-commerce-dataset)
+- Size: 56.3 MB
+- Important columns:
+    - SKU: Item ID
+    - Name: Title of item
+    - Price: USD
+    - Description: Description of item
+
