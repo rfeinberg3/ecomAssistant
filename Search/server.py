@@ -4,52 +4,35 @@ from functools import lru_cache
 import os
 from dotenv import load_dotenv
 
-#from colbert.infra import Run, RunConfig, ColBERTConfig
 from colbert import Searcher
 
-import pandas
-import psycopg2
-from psycopg2.extras import RealDictCursor
+from dbmanager import DatabaseManager
 
+# Load environment variables
 load_dotenv()
 
 INDEX_NAME = os.getenv("INDEX_NAME")
 INDEX_ROOT = os.getenv("INDEX_ROOT")
+
+HOST = os.getenv("POSTGRES_HOST")
+PORT = os.getenv("POSTGRES_PORT")
+DBNAME = os.getenv("POSTGRES_DB")
+USER = os.getenv("POSTGRES_USER")
+PASSWORD = os.getenv("POSTGRES_PASSWORD")
 
 # Set Flask App
 app = Flask(__name__)
 CORS(app)
 
 # Collect data from db and convert to pandas.DataFrame()
-def get_db_connection():
-    return psycopg2.connect(
-        host=os.getenv('POSTGRES_HOST'),
-        port=os.getenv('POSTGRES_PORT'),
-        dbname=os.getenv('POSTGRES_DB'),
-        user=os.getenv('POSTGRES_USER'),
-        password=os.getenv('POSTGRES_PASSWORD')
-    )
-
-def table_to_json(table_name, output_file):
-    conn = get_db_connection()
-    with conn.cursor(cursor_factory=RealDictCursor) as cur:
-        cur.execute(f"SELECT * FROM {table_name}")
-        rows = cur.fetchall()
-        
-        # Convert rows to a list of dictionaries
-        data = [dict(row) for row in rows]
-        data = pandas.DataFrame(data)
-        conn.close()
-    return data
-
-table_name = "clothing"
-output_file = f"{table_name}_data.json"
-dataset = table_to_json(table_name, output_file)
+dbm = DatabaseManager(dbname=DBNAME, user=USER, password=PASSWORD, host=HOST, port=PORT)
+df = dbm.table_to_pandas("clothing")
+#TODO: Add list of table names to .env and loop through them here. Possible create combine() method to combine datasets.
 
 # Factor data points to collection
-title = dataset['name']
-prices = dataset['price']
-collection = dataset['description']
+title = df['name']
+prices = df['price']
+collection = df['description']
 print("\nLength of collection =", len(prices), '\n')
 
 # Set Search object
@@ -65,7 +48,7 @@ def api_search_query(query, k):
     # Get average price from top 3 results
     topk = dict()
     topk['itemDescription'] = collection[results[0][0]]
-    print(prices[results[0][0]][0])
+    print(prices[results[0][0]])
     topk['price'] = (float(prices[results[0][0]][0])+float(prices[results[0][1]][0])+float(prices[results[0][2]][0])/3)
     return topk
 

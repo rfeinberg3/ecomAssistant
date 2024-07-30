@@ -10,16 +10,16 @@ WORKDIR /app
 RUN git clone https://github.com/stanford-futuredata/ColBERT.git
 
 # Install dependencies
-COPY requirements.txt /app/requirements.txt
+COPY Search/requirements.txt /app/requirements.txt
 RUN pip install -r requirements.txt
 
-# Expose Port
-EXPOSE 5050:5050
+# Copy in DatabaseManger
+COPY /data/dbmanager /app/ColBERT/dbmanager
 
-# Copy in index embeddings, .env, and server.py
-COPY /indexes /app/indexes
+# Copy Search Source Code
+COPY /Search/indexes /app/indexes
 COPY /.env /app/ColBERT/.env
-COPY /server.py /app/ColBERT/server.py
+COPY /Search/server.py /app/ColBERT/server.py
 
 ENTRYPOINT ["python", "ColBERT/server.py"]
 

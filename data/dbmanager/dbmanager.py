@@ -1,4 +1,6 @@
+import pandas
 import psycopg2
+from psycopg2.extras import RealDictCursor
 
 class DatabaseManager:
     def __init__(self, dbname, user, password, host, port):
@@ -37,3 +39,15 @@ class DatabaseManager:
         cur.close()
         conn.close()
         print(f"SQL script from {file_path} executed successfully.")
+
+    def table_to_pandas(self, table_name):
+        conn = psycopg2.connect(dbname=self.dbname, user=self.user, password=self.password, host=self.host, port=self.port)
+        with conn.cursor(cursor_factory=RealDictCursor) as cur:
+            cur.execute(f"SELECT * FROM {table_name}")
+            rows = cur.fetchall()
+            
+            # Convert rows to a list of dictionaries, then to df
+            data = [dict(row) for row in rows]
+            data = pandas.DataFrame(data)
+            conn.close()
+        return data
