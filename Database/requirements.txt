@@ -1,3 +1,4 @@
 pandas
+datasets
 psycopg2
 docker-py
