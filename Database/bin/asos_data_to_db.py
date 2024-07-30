@@ -12,7 +12,7 @@ if __name__ == '__main__':
     # Remove useless columns
     df = df.drop(columns=['url', 'size', 'color', 'images', 'category'])
 
-    # Normalize price and convert from Pound sterling to USD
+    # Normalize price and convert from Pound Sterling to USD
     df['price'] = df['price'].replace(to_replace=r'[^\d.]', value="", regex=True) # Remove non digit and '.' chracters
     df['price'] = (df['price'].astype(float) * 1.29).round(2)
 
