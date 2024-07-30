@@ -3,9 +3,6 @@
 ## Introduction
 This project sets up a PostgreSQL database using Docker, primarily for storing and managing fashion datasets. It includes tools for data manipulation and integration with an AI assistant.
 
-## Setbuilder
-The Setbuilder tool (`./setbuilder/setbuilder.py`) is designed to compress and extract necessary data from JSON files. It facilitates easy dataset creation and combination.
-
 ## Testing Setup
 
 ### Prerequisites
