@@ -2,7 +2,13 @@ import psycopg2
 from datasets import load_dataset
 
 if __name__ == '__main__':
-    
+    # Database connection parameters
+    dbname = 'eassistant'
+    user = 'postgres'
+    password = '1234'
+    host = 'localhost'
+    port = '5431'
+
     # Load Fashion asos-e-commerce-dataset from HuggingFace
     ds = load_dataset("TrainingDataPro/asos-e-commerce-dataset")['train']
 
@@ -10,14 +16,14 @@ if __name__ == '__main__':
     df = ds.to_pandas()
 
     # Remove useless columns
-    df = df.drop(columns=['url', 'size', 'color', 'images', 'category'])
+    ##df = df.drop(columns=['url', 'size', 'color', 'images', 'category'])
 
     # Normalize price and convert from Pound Sterling to USD
     df['price'] = df['price'].replace(to_replace=r'[^\d.]', value="", regex=True) # Remove non digit and '.' chracters
     df['price'] = (df['price'].astype(float) * 1.29).round(2)
 
     # Connect to postgreSQL database
-    conn = psycopg2.connect(dbname='eAssistant', host='localhost', port='5431', user='postgres', password='1234')
+    conn = psycopg2.connect(dbname=dbname, host=host, port=port, user=user, password=password)
     cur = conn.cursor()
 
     # Send data to postgreSQL database

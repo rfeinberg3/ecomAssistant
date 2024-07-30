@@ -36,12 +36,12 @@ docker compose up db --detach
 ### Connecting to the Database
 - Create the `eAssistant` database:
 ```bash
-docker exec -it ebayautoseller-db-1 createdb -U postgres eAssistant
+docker exec -it ebayautoseller-db-1 createdb -U postgres eassistant
 ```
 
 - Connect to the database from your local machine:
 ```bash
-psql postgresql://postgres:1234@localhost:5431/eAssistant
+psql postgresql://postgres:1234@localhost:5431/eassistant
 ```
 
 You should see a prompt like this:
