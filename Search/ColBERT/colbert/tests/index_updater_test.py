@@ -1,7 +1,7 @@
 import os
 import argparse
 from collections import namedtuple
-from datasets import load_dataset
+from data import load_dataset
 import tqdm
 
 from colbert import Indexer, Searcher, IndexUpdater

@@ -1,13 +1,14 @@
+import os
 import psycopg2
 from datasets import load_dataset
 
 if __name__ == '__main__':
     # Database connection parameters
-    dbname = 'eassistant'
-    user = 'postgres'
-    password = '1234'
-    host = 'localhost'
-    port = '5431'
+    host = os.environ.get('POSTGRES_HOST')
+    port = os.environ.get('POSTGRES_PORT')
+    dbname = os.environ.get('POSTGRES_DB')
+    user = os.environ.get('POSTGRES_USER')
+    password = os.environ.get('POSTGRES_PASSWORD')
 
     # Load Fashion asos-e-commerce-dataset from HuggingFace
     ds = load_dataset("TrainingDataPro/asos-e-commerce-dataset")['train']
@@ -40,6 +41,7 @@ if __name__ == '__main__':
         """, (sku, name, price, description))
 
     conn.commit()
+    print("asos Data Committed")
 
     # Close db connection
     cur.close()

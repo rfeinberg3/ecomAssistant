@@ -1,7 +1,7 @@
 import os
 import argparse
 from collections import namedtuple
-from datasets import load_dataset
+from data import load_dataset
 from utility.utils.dpr import has_answer, DPR_normalize
 import tqdm
 

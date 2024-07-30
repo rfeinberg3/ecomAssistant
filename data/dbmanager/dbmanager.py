@@ -1,6 +1,6 @@
 import psycopg2
 
-class DatabaseUtil:
+class DatabaseManager:
     def __init__(self, dbname, user, password, host, port):
         self.dbname = dbname
         self.user = user

@@ -18,11 +18,24 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 1234
-      POSTGRES_DB: eassistant
+      POSTGRES_PORT: 5432
     volumes:
       - pgdata:/var/lib/postgresql/data
-    ports:
-      - '127.0.0.1:5431:5432'
+    # For local testing
+    #ports:
+    #  - 127.0.0.1:5431:5432
+
+  populator:
+    build: ./data
+    command: ["python", "/app/population/run_populator_scripts.py"]
+    environment:
+      POSTGRES_HOST: db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: eassistant
+    depends_on:
+      - db
 
 # Define the shared volume  
 volumes:

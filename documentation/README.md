@@ -62,9 +62,9 @@
 - One such example is Facebook's RAG-Token Model, a neat tokenizer-retriever-model pipeline. However, this pipeline would require lots of reconstruction to set up for our use case and doesn't have much supporting documentation (any really) to aid in this endeavor.
 - Constructing a pipeline from scratch with the RAGatouille library seems to be a much more efficient process, provided the large amount of resources present in their framework.
 
-## Notes on PostgreSQL Database
+## Data
 
-### Fashion/Clothing Table
+### Fashion/Clothing Dataset
 [Link to dataset](https://huggingface.co/datasets/TrainingDataPro/asos-e-commerce-dataset)
 - Size: 56.3 MB
 - Important columns:
