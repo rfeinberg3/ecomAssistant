@@ -24,7 +24,7 @@
 - Phi-3 mini for text generation
   - [Phi-3 mini on Hugging Face](https://huggingface.co/microsoft/Phi-3-mini-4k-instruct?text=Give+a+seller+description+for+the+following+item+‘Apple+Watch’)
 
-## Notes on RAG
+## RAG
 
 ### ColBERTv2
 - [ColBERT on GitHub](https://github.com/stanford-futuredata/ColBERT?tab=readme-ov-file)
@@ -62,7 +62,31 @@
 - One such example is Facebook's RAG-Token Model, a neat tokenizer-retriever-model pipeline. However, this pipeline would require lots of reconstruction to set up for our use case and doesn't have much supporting documentation (any really) to aid in this endeavor.
 - Constructing a pipeline from scratch with the RAGatouille library seems to be a much more efficient process, provided the large amount of resources present in their framework.
 
-## Data
+## Database
+
+### Local Testing
+After setting up the postgres image with `docker compose up db --build`, you can toy with the database on you local machine if desired. Here are some commands below to get you strated.
+
+- Create the `eassistant` database:
+```bash
+docker exec -it ecomassistant-db-1 createdb -U postgres eassistant
+```
+
+- To connect to the database from your local machine ensure the `ports` are uncommented in the `db` service within the `compose.yaml` file. Then you can run this in your local terminal to connect:
+```bash
+psql postgresql://postgres:1234@localhost:5431/eassistant
+```
+You can replace `eassistant` with the database of your choice.
+
+You should see a prompt like this:
+```bash
+psql (16.0 (Homebrew), server 15.7 (Debian 15.7-1.pgdg120+1))
+Type "help" for help.
+
+eassistant=#
+```
+
+## Datasets
 
 ### Fashion/Clothing Dataset
 [Link to dataset](https://huggingface.co/datasets/TrainingDataPro/asos-e-commerce-dataset)

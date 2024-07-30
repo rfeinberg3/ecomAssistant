@@ -1,29 +1,11 @@
 # Docker Postgres Database
 
 ## Introduction
-This project sets up a PostgreSQL database using Docker, primarily for storing and managing fashion datasets. It includes tools for data manipulation and integration with an AI assistant.
+This directory is meant for setting up and populating tables in a PostgreSQL database using Docker, primarily for storing and managing ecommerce datasets. It includes tools for data manipulation and integration with the AI ecomAssistant.
 
-## Testing Setup
-
-### Prerequisites
+## Prerequisites
 - Docker
 - Python 3.x
-- (Optional) Conda for environment management
-
-### Installation
-
-Install required Python libraries:
-   
-- Using conda:
-```bash
-conda create --file requirements.txt --name db
-conda activate db
-```
-
-- OR using pip:
-```bash
-pip install -r requirements.txt
-```
 
 ## Usage
 
@@ -33,39 +15,7 @@ pip install -r requirements.txt
 docker compose up db --detach
 ```
 
-### Connecting to the Database
-- Create the `eAssistant` database:
+### Populating the Database
 ```bash
-docker exec -it ebayautoseller-db-1 createdb -U postgres eassistant
+docker compose up populator --build
 ```
-
-- To connect to the database from your local machine:
-```bash
-psql postgresql://postgres:1234@localhost:5432/eassistant
-```
-
-You should see a prompt like this:
-```bash
-psql (16.0 (Homebrew), server 15.7 (Debian 15.7-1.pgdg120+1))
-Type "help" for help.
-
-eAssistant=#
-```
-
-### Initializing Tables
-- Copy and paste the contents of `./bin/create-tables.sql` into the psql command-line to initialize the table.
-
-### Adding Data
-- Run the script to add the Fashion dataset to the database:
-```bash
-python ./bin/asos_data_to_db.py
-```
-
-Note: Ensure that the variables in the Docker Compose db service and the `psycopg2.connect()` method in `asos_data_to_db.py` are correctly set up.
-
-### Usage Example
-See `./tests/test_build.py` and its output `./tests/varied_dataset.csv` for an example of how to use Setbuilder.
-
-## Developer Notes
-- When adding new datasets, create separate tables for each.
-- To update the dataset for the eAssistant, you'll need to rerun indexing (requires GPU support).

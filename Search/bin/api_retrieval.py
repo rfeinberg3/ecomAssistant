@@ -24,7 +24,6 @@ print("\nLength of collection =", len(prices), '\n')
 with Run().context(RunConfig()):
         searcher = Searcher(index=index_name, collection=collection)
 
-
 # Set Flask App
 app = Flask(__name__)
 CORS(app)

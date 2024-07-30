@@ -1,7 +1,10 @@
 #syntax=docker/dockerfile:1
 
 # Load python image
-FROM python:3.9
+FROM python:3.10
+
+RUN git clone 
+
 
 # Set working directory
 WORKDIR /app
