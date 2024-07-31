@@ -22,7 +22,7 @@ if __name__ == '__main__':
     # Normalize price and convert from Pound Sterling to USD
     df['price'] = df['price'].replace(to_replace=r'[^\d.]', value="", regex=True) # Remove non digit and '.' chracters
     df['price'] = (df['price'].astype(float) * 1.29).round(2)
-'''
+
     # Connect to postgreSQL database
     conn = psycopg2.connect(dbname=dbname, host=host, port=port, user=user, password=password)
     cur = conn.cursor()
@@ -46,7 +46,6 @@ if __name__ == '__main__':
     # Close db connection
     cur.close()
     conn.close()
-'''
 
 
 

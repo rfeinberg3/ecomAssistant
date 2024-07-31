@@ -14,7 +14,7 @@ COPY Search/requirements.txt /app/requirements.txt
 RUN pip install -r requirements.txt
 
 # Copy in DatabaseManger
-COPY /data/dbmanager /app/ColBERT/dbmanager
+COPY /db/dbmanager /app/ColBERT/dbmanager
 
 # Copy Search Source Code
 COPY /Search/indexes /app/indexes

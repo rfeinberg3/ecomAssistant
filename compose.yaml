@@ -27,7 +27,7 @@ services:
       - 127.0.0.1:5431:5432
 
   populator:
-    build: ./data
+    build: ./db
     command: ["python", "/app/population/run_populator_scripts.py"]
     environment:
       POSTGRES_HOST: db

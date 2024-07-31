@@ -49,7 +49,7 @@ def api_search_query(query, k):
     topk = dict()
     topk['itemDescription'] = collection[results[0][0]]
     print(prices[results[0][0]])
-    topk['price'] = (float(prices[results[0][0]][0])+float(prices[results[0][1]][0])+float(prices[results[0][2]][0])/3)
+    topk['price'] = prices[results[0][0]] # (float(prices[results[0][0]][0])+float(prices[results[0][1]][0])+float(prices[results[0][2]][0])/3)
     return topk
 
 
