@@ -65,7 +65,7 @@
 ## Database
 
 ### Local Testing
-After setting up the postgres image with `docker compose up db --build`, you can toy with the database on you local machine if desired. Here are some commands below to get you strated.
+After setting up the postgres image with `docker compose up db --build`, you can toy with the database on you local machine if desired. Here are some commands below to get you started.
 
 - Create the `eassistant` database:
 ```bash
