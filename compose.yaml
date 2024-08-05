@@ -23,8 +23,8 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
     # For local testing
-    ports:
-      - 127.0.0.1:5431:5432
+    #ports:
+    #  - 127.0.0.1:5431:5432
 
   populator:
     build: ./db
