@@ -1,5 +1,6 @@
 import pandas
 import psycopg2
+from psycopg2 import sql
 from psycopg2.extras import RealDictCursor
 
 class DatabaseManager:
@@ -10,7 +11,41 @@ class DatabaseManager:
         self.host = host
         self.port = port
 
-    def create_db(self):
+    def is_db(self) -> bool:
+        try:
+            with psycopg2.connect(
+                dbname=self.dbname,
+                user=self.user,
+                password=self.password,
+                host=self.host,
+                port=self.port
+            ) as conn:
+                return True
+        except psycopg2.Error:
+            return False
+
+    def is_table(self, table_name: str) -> None:
+        ''' Returns False if table is already in database.
+        ### Args:
+            table_name: Name of table to check if exists.
+        '''
+        try:
+            with psycopg2.connect(
+                dbname=self.dbname,
+                user=self.user,
+                password=self.password,
+                host=self.host,
+                port=self.port
+            ) as conn:
+                with conn.cursor() as cur:
+                    cur.execute(sql.SQL(
+                        "SELECT EXISTS (SELECT FROM information_schema.tables WHERE table_name = {})"
+                    ).format(sql.Identifier(table_name)))
+                    return cur.fetchone()[0]
+        except psycopg2.Error:
+            return True
+
+    def create_db(self) -> None:
         conn = psycopg2.connect(dbname='postgres', user=self.user, password=self.password, host=self.host, port=self.port)
         conn.autocommit = True
         cur = conn.cursor()
@@ -27,7 +62,7 @@ class DatabaseManager:
         cur.close()
         conn.close()
 
-    def execute_sql_file(self, file_path):
+    def execute_sql_file(self, file_path: str) -> None:
         conn = psycopg2.connect(dbname=self.dbname, user=self.user, password=self.password, host=self.host, port=self.port)
         cur = conn.cursor()
 
@@ -40,7 +75,7 @@ class DatabaseManager:
         conn.close()
         print(f"SQL script from {file_path} executed successfully.")
 
-    def table_to_pandas(self, table_name):
+    def table_to_pandas(self, table_name: str) -> pandas.DataFrame:
         conn = psycopg2.connect(dbname=self.dbname, user=self.user, password=self.password, host=self.host, port=self.port)
         with conn.cursor(cursor_factory=RealDictCursor) as cur:
             cur.execute(f"SELECT * FROM {table_name}")

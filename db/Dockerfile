@@ -9,5 +9,5 @@ COPY requirements.txt /app/requirements.txt
 RUN pip install -r requirements.txt
 
 # Copy in source code and libraries
-COPY /dbmanager /app/dbmanager
-COPY /population /app/population
+COPY /population/clothing /app/population
+COPY /dbmanager /app/population/dbmanager

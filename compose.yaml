@@ -28,7 +28,7 @@ services:
 
   populator:
     build: ./db
-    command: ["python", "/app/population/run_populator_scripts.py"]
+    command: ["python", "/app/population/data_to_db.py"]
     environment:
       POSTGRES_HOST: db
       POSTGRES_USER: postgres
