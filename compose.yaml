@@ -37,7 +37,6 @@ services:
       POSTGRES_DB: eassistant
     depends_on:
       - db
-    tty: True
 
 # Define the shared volume  
 volumes:
