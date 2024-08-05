@@ -1,3 +1,7 @@
+# Ignore Specific Dirs
+ecom_gen_tests
+eAs_extraData
+
 account-credentials.json
 
 # Ignore Python bytecode
