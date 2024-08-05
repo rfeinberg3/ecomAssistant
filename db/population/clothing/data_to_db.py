@@ -7,14 +7,18 @@ from dbmanager import DatabaseManager
 
 def db_table_init(dbname: str, user: str, password: str, host: str, port: str) -> None:
     ''' Initializes the ecomassistant db and clothing table (if not initialized) 
-    for population below. '''
+    for population below. 
+    
+    ### Returns:
+        True if table already existed. False if table needed to be created.
+    '''
     
     # SQL file path
     abs_path = os.path.abspath('./population')
     table_file_path = abs_path + '/create-tables.sql'
 
     # Create DatabaseManager instance
-    db_util = DatabaseManager(dbname, user, password, host, port)
+    db_util = DatabaseManager(dbname=dbname, user=user, password=password, host=host, port=port)
 
     # Create database if it doesn't exist
     if not db_util.is_db():
@@ -27,9 +31,11 @@ def db_table_init(dbname: str, user: str, password: str, host: str, port: str) -
     
     return True
 
-def data_to_db(dbname: str, user: str, password: str, host: str, port: str) -> None:
-    ''' Loads the asos-e-commerce-dataset fashion dataset and pushed to the 
-    clothing table in our PostgreSQL DB.
+def process_data():
+    ''' Loads the asos-e-commerce-dataset fashion dataset and process.
+
+    ### Returns:
+        df: pandas.DataFrame object
     '''
     
     # Load Fashion asos-e-commerce-dataset from HuggingFace
@@ -38,9 +44,17 @@ def data_to_db(dbname: str, user: str, password: str, host: str, port: str) -> N
     # Convert to pandas DataFrame
     df = ds.to_pandas()
 
+    # Drop rows with null values
+    df = df.dropna()
+
     # Normalize price and convert from Pound Sterling to USD
     df['price'] = df['price'].replace(to_replace=r'[^\d.]', value="", regex=True) # Remove non digit and '.' chracters
     df['price'] = (df['price'].astype(float) * 1.29).round(2)
+
+    return df
+
+def data_to_db(df, dbname: str, user: str, password: str, host: str, port: str) -> None:
+    ''' Pushed DataFrame to the clothing table in our PostgreSQL DB. '''
 
     # Connect to postgreSQL database
     conn = psycopg2.connect(dbname=dbname, host=host, port=port, user=user, password=password)
@@ -74,8 +88,12 @@ if __name__ == '__main__':
     user = os.environ.get('POSTGRES_USER')
     password = os.environ.get('POSTGRES_PASSWORD')
 
-    db_table_init(dbname, user, password, host, port)
-    data_to_db(dbname, user, password, host, port)
+    if not db_table_init(dbname, user, password, host, port):
+        df = process_data()
+        data_to_db(df, dbname, user, password, host, port)
+
+    else:
+        print("Data previously committed")
 
     
 

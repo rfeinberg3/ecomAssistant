@@ -1,6 +1,5 @@
 import pandas
 import psycopg2
-from psycopg2 import sql
 from psycopg2.extras import RealDictCursor
 
 class DatabaseManager:
@@ -38,12 +37,12 @@ class DatabaseManager:
                 port=self.port
             ) as conn:
                 with conn.cursor() as cur:
-                    cur.execute(sql.SQL(
-                        "SELECT EXISTS (SELECT FROM information_schema.tables WHERE table_name = {})"
-                    ).format(sql.Identifier(table_name)))
-                    return cur.fetchone()[0]
+                    cur.execute(
+                        f"SELECT COUNT(*) FROM {table_name};"
+                    )
+                    return True
         except psycopg2.Error:
-            return True
+            return False
 
     def create_db(self) -> None:
         conn = psycopg2.connect(dbname='postgres', user=self.user, password=self.password, host=self.host, port=self.port)
