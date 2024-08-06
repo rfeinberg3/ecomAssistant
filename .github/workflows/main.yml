@@ -9,6 +9,6 @@ jobs:
     steps:
     # need checkout before using docker-compose-action
     - uses: actions/checkout@v3
-    - uses: adambirds/docker-compose-action@v1.3.0
+    - uses: hoverkraft-tech/compose-action@v0.0.0
       with:
         compose-file: "./compose.yaml"
