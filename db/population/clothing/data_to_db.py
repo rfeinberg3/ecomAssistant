@@ -88,6 +88,8 @@ if __name__ == '__main__':
     user = os.environ.get('POSTGRES_USER')
     password = os.environ.get('POSTGRES_PASSWORD')
 
+    print(f"Host = {host}\nDBName = {dbname}")
+
     if not db_table_init(dbname, user, password, host, port):
         df = process_data()
         data_to_db(df, dbname, user, password, host, port)

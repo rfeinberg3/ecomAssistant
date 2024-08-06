@@ -2,10 +2,7 @@ services:
   # Define the application
   retrieval:
     # Build the Dockerfile that's in the RAG directory
-    build: ./
-    # Define the directory in the service that connects to the shared volume 
-    volumes:
-      - vol-input-data:/app/volume
+    build: .
     # Expose necessary ports for API server
     ports:
       - '127.0.0.1:5050:5050'
@@ -40,5 +37,4 @@ services:
 
 # Define the shared volume  
 volumes:
-  vol-input-data: 
   pgdata:
