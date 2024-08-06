@@ -11,6 +11,5 @@ jobs:
     - uses: adambirds/docker-compose-action@v1.3.0
       with:
         compose-file: "./compose.yaml"
-        up-flags: "--build"
         services: |
           retrieval
