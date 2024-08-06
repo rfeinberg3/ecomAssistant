@@ -7,8 +7,6 @@ jobs:
   run-compose:
     runs-on: ubuntu-latest
     steps:
-    # need checkout before using docker-compose-action
-    - uses: actions/checkout@v3
-    - uses: hoverkraft-tech/compose-action@v0.0.0
-      with:
-        compose-file: "./compose.yaml"
+      - uses: actions/checkout@v2
+      - name: Build the stack
+        run: docker-compose up -d
