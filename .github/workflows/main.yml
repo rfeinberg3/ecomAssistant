@@ -14,4 +14,3 @@ jobs:
         up-flags: "--build"
         services: |
           retrieval
-          db
