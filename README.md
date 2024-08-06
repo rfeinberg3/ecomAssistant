@@ -175,7 +175,7 @@ _For details on how a more diverse dataset could be created with datascraping, p
   - [x] Research and test retrieval model to integrate into this program.
   - [x] Index on colab (GPU support needed).
   - [x] Create CPU functional Search script.
-  - [ ] Use HuggingFace ColBERT repo create in memory model calls.
+  - [x] Use HuggingFace ColBERT repo create in memory model calls.
 - [x] Create microservices with Docker.
   - [x] Orchestrate containers with docker compose.
 - [x] Full Stack Paradigm.
@@ -183,14 +183,12 @@ _For details on how a more diverse dataset could be created with datascraping, p
   - [x] Refactor retrieval in to API server with Flask.
   - [x] Setup networking to allow frontend to make API calls to backend (locally for now)
 - [x] Setup Mock Frontend (Firebase hosting)
-- [ ] Convert the `Dataset` directory into a dedicated Database (PostgreSQL)
-  - [ ] Connect db to retrieval app to create in memory dataset for Search. 
+- [x] Convert the `Dataset` directory into a dedicated Database (PostgreSQL)
+  - [x] Connect db to retrieval app to create in memory dataset for Search. 
   - [x] Containerize psql db
   - [x] Add real ecommerce dataset to db
 - [ ] Research, test, and integrate a generative model to use with this program for item description generation.
-  - [ ] T5 generative text script 
 - [ ] Refactor all code into classes with abstracts where applicable
-- [ ] Add Typing to all classes.
 
 
 See the [open issues](https://github.com/rfeinberg3/ecomAssistant/issues) for a full list of proposed features (and known issues).
