@@ -10,15 +10,30 @@ async function main() {
 
 // Handle form submission
 async function handleSubmit(event) {
-
-    event.preventDefault(); // Prevent the form from submitting normally
-
-    // Get input from form
-    const input = document.getElementById('userInput').value;
-
-    // Get data from backend
-    const eASObject = await getData(url, input);
-    updateOutput(eASObject);
+  event.preventDefault(); // Prevent the form from submitting normally
+    
+  // Show loading indicator
+  document.getElementById('loading').style.display = 'block';
+  
+  // Clear previous results
+  document.getElementById("price").innerHTML = "";
+  document.getElementById("description").innerHTML = "";
+  
+  // Get input from form
+  const input = document.getElementById('userInput').value;
+  
+  try {
+      // Get data from backend
+      const eASObject = await getData(url, input);
+      updateOutput(eASObject);
+  } catch (error) {
+      console.error('Error:', error);
+      // Display error message to user
+      document.getElementById("description").innerHTML = "An error occurred. Please try again.";
+  } finally {
+      // Hide loading indicator
+      document.getElementById('loading').style.display = 'none';
+  }
 }
 
 // Fetch data from backend
@@ -31,7 +46,7 @@ async function getData(url, input) {
   :return: JSON eAS object from search on input
   :rtype: JSON object
   */
-  let k = 3;
+  let k = 1;
   let response = await fetch(`${url}?query=${encodeURIComponent(input)}&k=${k}`);
   return response.json();
 }
