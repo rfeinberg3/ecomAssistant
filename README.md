@@ -145,8 +145,7 @@ cd ecomAssistant
 ## Usage
 
 ### Backend Retrieval API Server
-- !! ^^^ BROKEN. Needs communication between database to be setup before can function ^^^ !!
-- Initialize the API retrieval server (locally hosted on your machine):
+- Initialize the API retrieval server (give this a minute to load):
 ```sh
 docker compose up --detach
 ```
@@ -157,6 +156,7 @@ docker compose up --detach
 cd frontend
 npx http-server --cors --port 8080
 ```
+- Now you can go to the provided link to use the web app!
 
 
 ## ecom DataScraping
