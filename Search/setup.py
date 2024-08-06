@@ -1,9 +1,12 @@
 import os
+import time
 from dotenv import load_dotenv
 import torch
 from huggingface_hub import hf_hub_download
 
 from dbmanager import DatabaseManager
+
+time.sleep(30)
 
 # Load environment variables
 load_dotenv()

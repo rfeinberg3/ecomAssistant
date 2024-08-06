@@ -1,4 +1,5 @@
 import os
+import time
 import psycopg2
 from datasets import load_dataset
 
@@ -81,6 +82,8 @@ def data_to_db(df, dbname: str, user: str, password: str, host: str, port: str) 
     conn.close()
 
 if __name__ == '__main__':
+    
+    time.sleep(10)
 
     host = os.environ.get('POSTGRES_HOST')
     port = os.environ.get('POSTGRES_PORT')

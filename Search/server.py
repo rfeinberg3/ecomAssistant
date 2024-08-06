@@ -3,10 +3,12 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from functools import lru_cache
 import os
+import time
 from dotenv import load_dotenv
 from colbert import Searcher
 #from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
+time.sleep(30)
 
 # Load environment variables
 load_dotenv()

@@ -7,14 +7,12 @@ services:
     ports:
       - '127.0.0.1:5050:5050'
     depends_on:
-      - db
       - populator
 
   # Define the database: https://www.docker.com/blog/how-to-use-the-postgres-docker-official-image/ && https://www.linkedin.com/pulse/configuring-connecting-postgresql-database-docker-dqeze/
   db:
     image: postgres:15
     environment:
-      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 1234
       POSTGRES_PORT: 5432
     volumes:
