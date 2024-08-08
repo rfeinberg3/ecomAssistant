@@ -26,7 +26,7 @@
 <h3 align="center">ecomAssistant (eAs)</h3>
 
   <p align="center">
-    eAs is a tool that generates aggregated item pricing and descriptions by simply inputing an item's name. It uses ColBERT for Retrieval-Augmented Generation, open-source ecommerce item data for knowledge base acquisition, and Docker for microservice orchestration.
+    eAs is a tool that generates aggregated item pricing and descriptions by simply inputing an item's name. It uses ColBERT and GPT2 for Retrieval-Augmented Generation, open-source ecommerce item data for knowledge base acquisition, and Docker for microservice orchestration.
     <br>
     <a href="https://github.com/rfeinberg3/ecomAssistant/tree/main/documentation"><strong>Explore the docs »</strong></a>
     <br>
