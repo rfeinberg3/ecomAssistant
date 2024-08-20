@@ -1,0 +1,5 @@
+-e ColBERT['faiss-cpu','torch']
+# You can run `-e ColBERT['faiss-gpu','torch']` instead if you have GPU access
+flask_cors
+psycopg2
+huggingface_hub
