@@ -178,13 +178,12 @@ _For details on how a more diverse dataset could be created with datascraping, p
 ## Roadmap
 
 - [x] Build a Knowledge base of item data.
-  - [x] Use Selenium Chrome Drivers to extract item descriptions buried in html.
+  - [x] Use Selenium WebDriver to extract item descriptions buried in html.
   - [x] Research and integrate useful ecommerce item data dataset.
 - [x] Indexing and Search Scripts (Retrieval part of RAG).
-  - [x] Research and test retrieval model to integrate into this program.
   - [x] Index on colab (GPU support needed).
   - [x] Create CPU functional Search script.
-  - [x] Use HuggingFace ColBERT repo create in memory model calls.
+  - [x] Use HuggingFace for in-memory embedding calls.
 - [x] Create microservices with Docker.
   - [x] Orchestrate containers with docker compose.
 - [x] Full Stack Paradigm.
@@ -195,7 +194,7 @@ _For details on how a more diverse dataset could be created with datascraping, p
 - [x] Convert the `Dataset` directory into a dedicated Database (PostgreSQL)
   - [x] Connect db to retrieval app to create in memory dataset for Search. 
   - [x] Containerize psql db
-  - [x] Add real ecommerce dataset to db
+  - [x] Add ecommerce dataset to db
 - [ ] Research, test, and integrate a generative model to use with this program for item description generation.
 - [ ] Refactor all code into classes with abstracts where applicable
 
