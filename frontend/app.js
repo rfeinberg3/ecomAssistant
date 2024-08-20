@@ -29,7 +29,7 @@ async function handleSubmit(event) {
   } catch (error) {
       console.error('Error:', error);
       // Display error message to user
-      document.getElementById("description").innerHTML = "An error occurred. Please try again.";
+      document.getElementById("description").innerHTML = "Backend still loading... try again soon.";
   } finally {
       // Hide loading indicator
       document.getElementById('loading').style.display = 'none';
