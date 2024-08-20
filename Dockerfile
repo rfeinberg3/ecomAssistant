@@ -14,7 +14,7 @@ RUN git clone https://github.com/stanford-futuredata/ColBERT.git
 
 
 # Install dependencies
-COPY Search/requirements.txt /app/requirements.txt
+COPY search/requirements.txt /app/requirements.txt
 RUN pip install -r requirements.txt
 
 
@@ -24,10 +24,10 @@ COPY db/dbmanager /app/ColBERT/dbmanager
 
 # Copy Search Source Code
 COPY .env /app/ColBERT/.env
-COPY Search/server.py /app/ColBERT/server.py
-COPY Search/setup.py /app/ColBERT/setup.py
+COPY search/server.py /app/ColBERT/server.py
+COPY search/setup.py /app/ColBERT/setup.py
 
-COPY Search/start.sh /app/start.sh
+COPY search/start.sh /app/start.sh
 RUN chmod +x /app/start.sh
 
 

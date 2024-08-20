@@ -1,3 +1,4 @@
+from typing import TYPE_CHECKING
 import os
 import time
 import psycopg2
@@ -5,6 +6,8 @@ from datasets import load_dataset
 
 from dbmanager import DatabaseManager
 
+if TYPE_CHECKING:
+    import pandas as pd
 
 def db_table_init(dbname: str, user: str, password: str, host: str, port: str) -> None:
     ''' Initializes the ecomassistant db and clothing table (if not initialized) 
@@ -32,11 +35,11 @@ def db_table_init(dbname: str, user: str, password: str, host: str, port: str) -
     
     return True
 
-def process_data():
+def process_data() -> 'pd.DataFrame':
     ''' Loads the asos-e-commerce-dataset fashion dataset and process.
 
     ### Returns:
-        df: pandas.DataFrame object
+        df: pandas.DataFrame object containing the dataset processed for our model scheme.
     '''
     
     # Load Fashion asos-e-commerce-dataset from HuggingFace

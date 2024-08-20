@@ -3,6 +3,7 @@ ecom_gen_tests
 eAs_extraData
 
 account-credentials.json
+.markdownlint.json
 
 # Ignore Python bytecode
 __pycache__/
