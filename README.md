@@ -128,7 +128,8 @@ Instructions for simple local setup and run are given below. If you would like t
 ### Prerequisites
 
 - Download Docker Desktop [here](https://www.docker.com/products/docker-desktop/).
-- Install node http server globally for local hosting:
+- Download Node.js [here](https://nodejs.org/en/download/package-manager)
+- Install node's http-server program globally for local hosting:
   
 ```sh
 npm install http-server -g
@@ -137,7 +138,7 @@ npm install http-server -g
 ### Installation
 
 - Create a directory for this program, and clone this repo into it:
-- 
+  
 ```sh
 git clone https://github.com/rfeinberg3/ecomAssistant.git
 cd ecomAssistant
