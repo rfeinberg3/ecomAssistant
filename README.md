@@ -62,7 +62,6 @@
   </ol>
 </details>
 
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
@@ -77,7 +76,7 @@ This project aims to streamline the listing process by providing high-quality, a
 
 ### Method
 
-#### **Developing the Knowledge Base**: 
+#### **Developing the Knowledge Base**
 
 <ol>
   <li>Data Collection: Knowledge base developed with open-source ecommerce datasets, `TrainingDataPro/asos-e-commerce-dataset` for example.</li>
@@ -89,14 +88,14 @@ This project aims to streamline the listing process by providing high-quality, a
   </ul>
 </ol>
 
-#### **Executing the Retrieval Query**: 
+#### **Executing the Retrieval Query**
 
 <ol>
   <li>Query Processing: Once the collection is indexed, ColBERT’s Searcher can take a query and compare it to the indexed documents to find the k best matches.</li>
   <li>User Query Input: The user inputs a descriptive title for the item they wish to sell, which the Searcher uses to find relevant documents.</li>
 </ol>
 
-#### **Aggregating Price Data**:
+#### **Aggregating Price Data**
 
 <ol>
   <li>Document Retrieval: ColBERT retrieves documents based on the text query (the item’s title), providing information about the k most similar items scraped from eBay.</li>
@@ -104,7 +103,6 @@ This project aims to streamline the listing process by providing high-quality, a
 </ol>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 ### Built With
 
@@ -117,35 +115,28 @@ This project aims to streamline the listing process by providing high-quality, a
 - [![Selenium Chrome Drivers][selenium-badge]][selenium-url]
 - [![Linux][linux-badge]][linux-url]
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- GETTING STARTED -->
 ## Getting Started
+
 Instructions for simple local setup and run are given below. If you would like to see details on how to setup virtual environments for testing, that information is available in the 'RAG' and 'DataScraper' directories.
 
 ### Prerequisites
 
 - Download Docker Desktop [here](https://www.docker.com/products/docker-desktop/).
-- Download Node.js [here](https://nodejs.org/en/download/package-manager)
-- Install node's http-server program globally for local hosting:
-  
-```sh
-npm install http-server -g
-```
+- Install Node.js for local hosting [here](https://nodejs.org/en/download/package-manager)
 
 ### Installation
 
 - Create a directory for this program, and clone this repo into it:
-  
+
 ```sh
 git clone https://github.com/rfeinberg3/ecomAssistant.git
 cd ecomAssistant
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- USAGE EXAMPLES -->
 ## Usage
@@ -160,11 +151,11 @@ docker compose up --detach
 
 ### Frontend HTTP Server
 
-- Run the server with Node.js http-server module:
+- Run the server with Node.js:
   
 ```bash
 cd frontend
-npx http-server --cors --port 8080
+node server.js
 ```
 
 - Now you can go to the provided link to use the web app!
@@ -219,7 +210,6 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 <!-- LICENSE -->
 ## License
 
@@ -230,10 +220,9 @@ Distributed under the Apache-2.0 License. See `LICENSE.txt` for more information
 <!-- CONTACT -->
 ## Contact
 
-Ryan Feinberg - [LinkedIn](https://www.linkedin.com/in/rfeinberg3/) - rfeinberg3@gmail.com
+Ryan Feinberg - [LinkedIn](https://www.linkedin.com/in/rfeinberg3/) - [rfeinberg3@gmail.com](rfeinberg3@gmail.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
