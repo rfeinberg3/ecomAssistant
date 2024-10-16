@@ -1,7 +1,6 @@
 CREATE TABLE clothing (
-    sku VARCHAR(20),
+    sku VARCHAR(20) PRIMARY KEY,
     name TEXT,
     price DOUBLE PRECISION,
-    description TEXT,
-    UNIQUE (sku)
+    description TEXT
 );
