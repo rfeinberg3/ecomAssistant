@@ -24,7 +24,7 @@ class DatabaseManager:
             return False
 
     def is_table(self, table_name: str) -> None:
-        ''' Returns False if table is already in database.
+        ''' Returns True if table is already in database.
         ### Args:
             table_name: Name of table to check if exists.
         '''
